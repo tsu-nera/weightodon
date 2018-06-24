@@ -1,5 +1,19 @@
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1>Welcome to 体重どん</h1>
+<% if user_signed_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <%= form_for(@weight) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :value, class: 'form-control' %>
+        </div>
+        <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </aside>
   </div>
-</div>
+<% else %>
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>Welcome to the 体重どん</h1>
+      <%= link_to 'Sign up now!', new_user_registration_path, class: 'btn btn-lg btn-primary' %>
+    </div>
+  </div>
+<% end %>

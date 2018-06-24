@@ -1,0 +1,10 @@
+<h1>体重投稿</h1>
+
+<%= form_for(@weight) do |f| %>
+  <%= f.label :value, '体重' %>
+  <%= f.text_field :value %>
+
+  <%= f.submit '投稿' %>
+<% end %>
+
+<%= link_to '一覧に戻る', weights_path %>
