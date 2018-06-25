@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :weights
 
-
+  after_create :create_profile
+  has_one :profile
 end

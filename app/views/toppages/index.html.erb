@@ -3,11 +3,11 @@
     <aside class="col-xs-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-<!--                    <h3 class="panel-title"><%#= @user.name %></h3>-->
-                    <h3 class="panel-title">tsu-nera</h3>
+<!--          <h3 class="panel-title"><%#= @profile.nicname %></h3>-->
         </div>
         <div class="panel-body">
 <!--          <img class="media-object img-rounded img-responsive" src="<%#= gravatar_url(@user, { size: 500 }) %>" alt="">-->
+          <%= link_to 'プロフィール編集', edit_profile_path(@profile) ,class: 'label label-warning'%>
         </div>
       </div>
     </aside>
