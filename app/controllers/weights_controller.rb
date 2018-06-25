@@ -39,12 +39,14 @@ class WeightsController < ApplicationController
       flash.now[:alart] = '正常に更新されませんでした。'
       render :edit
     end
+
+    redirect_to root_url
   end
 
   def destroy
     @weight.destroy
     flash[:notice] = '体重を削除しました。'
-    redirect_to weights_url
+    redirect_to root_url
   end
 
   private

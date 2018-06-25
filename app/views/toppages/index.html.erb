@@ -1,13 +1,39 @@
 <% if user_signed_in? %>
   <div class="row">
-    <aside class="col-md-4">
-      <%= form_for(@weight) do |f| %>
-        <div class="form-group">
-          <%= f.text_area :value, class: 'form-control' %>
+    <aside class="col-xs-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+<!--                    <h3 class="panel-title"><%#= @user.name %></h3>-->
+                    <h3 class="panel-title">tsu-nera</h3>
         </div>
-        <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
-      <% end %>
+        <div class="panel-body">
+<!--          <img class="media-object img-rounded img-responsive" src="<%#= gravatar_url(@user, { size: 500 }) %>" alt="">-->
+        </div>
+      </div>
     </aside>
+    <div class="col-xs-8">
+      <%= link_to '体重投稿', new_weight_path ,class: 'btn btn-primary'%>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Date</th>
+          <th>Weight</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @weights.each do |weight| %>
+            <tr>
+              <td><%= weight.created_at.strftime('%Y-%m-%d %H:%m') %></td>
+              <td><%= weight.value %> kg</td>
+              <td><%= link_to 'Edit', edit_weight_path(weight), class: 'label label-warning' %>
+                  <%= link_to 'Delete', weight, class: 'label label-danger',
+                              method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 <% else %>
   <div class="center jumbotron">
