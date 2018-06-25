@@ -1,6 +1,22 @@
-<%= form_for(weight) do |f| %>
-  <%= f.label :value, '体重' %>
-  <%= f.text_field :value %>
+<div class="row">
+  <div class="col-xs-4">
+  <%= form_for(weight) do |f| %>
+    <% if weight.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+          <% weight.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <%= f.submit '投稿' %>
-<% end %>
+    <div class="form-group">
+      <%= f.label :value, '体重' %>
+      <%= f.text_field :value, class: 'form-control' %>
+    </div>
+      <%= f.submit '投稿', class: 'btn btn-primary' %>
+      <%= link_to 'キャンセル', root_path, class: 'btn btn-default' %>
+  <% end %>
+  </div>
+</div>
