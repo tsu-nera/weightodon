@@ -1,15 +1,7 @@
 <% if user_signed_in? %>
   <div class="row">
     <aside class="col-xs-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-<!--          <h3 class="panel-title"><%#= @profile.nicname %></h3>-->
-        </div>
-        <div class="panel-body">
-<!--          <img class="media-object img-rounded img-responsive" src="<%#= gravatar_url(@user, { size: 500 }) %>" alt="">-->
-          <%= link_to 'プロフィール編集', edit_profile_path(@profile) ,class: 'label label-warning'%>
-        </div>
-      </div>
+      <%= render :template => 'profiles/show' %>
     </aside>
     <div class="col-xs-8">
       <%= link_to '体重投稿', new_weight_path ,class: 'btn btn-primary'%>
@@ -26,8 +18,8 @@
             <tr>
               <td><%= weight.created_at.strftime('%Y-%m-%d %H:%m') %></td>
               <td><%= weight.value %> kg</td>
-              <td><%= link_to 'Edit', edit_weight_path(weight), class: 'label label-warning' %>
-                  <%= link_to 'Delete', weight, class: 'label label-danger',
+              <td><%= link_to '編集', edit_weight_path(weight), class: 'label label-warning' %>
+                  <%= link_to '削除', weight, class: 'label label-danger',
                               method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
             </tr>
           <% end %>

@@ -1,0 +1,47 @@
+<div class="panel panel-default">
+  <% if !@profile.nil? %>
+
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @profile.nicname %></h3>
+  </div>
+  <div class="panel-body">
+    <img class="media-object img-rounded img-responsive" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+
+    <p></p>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>ニックネーム</th>
+        <td><%= @profile.nicname %></td>
+      </tr>
+      <tr>
+        <th>公開設定</th>
+        <td><%= @profile.public %></td>
+      </tr>
+      <tr>
+        <th>身長</th>
+        <td><%= @profile.height %> cm</td>
+      </tr>
+      <tr>
+        <th>開始時の体重</th>
+        <td><%= @profile.start_weight %> kg</td>
+      </tr>
+      <tr>
+        <th>性別</th>
+        <td><%= @profile.sex %></td>
+      </tr>
+      <tr>
+        <th>年齢</th>
+        <td><%= @profile.age %></td>
+      </tr>
+      <tr>
+        <th>一言メッセージ</th>
+        <td><%= @profile.message %></td>
+      </tr>
+    </table>
+
+    <%= link_to 'プロフィール編集', edit_profile_path(@profile) ,class: 'label label-warning'%>
+
+    <% end %>
+  </div>
+</div>

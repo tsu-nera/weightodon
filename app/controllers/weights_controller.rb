@@ -21,7 +21,7 @@ class WeightsController < ApplicationController
       redirect_to root_url
     else
       @wights = current_user.weights.order('created_at DESC')
-      flash.now[:alart] = '体重の投稿に失敗しました。'
+      flash.now[:alert] = '体重の投稿に失敗しました。'
       render 'toppages/index'
     end
   end
@@ -36,7 +36,7 @@ class WeightsController < ApplicationController
     if @weight.update(weight_params)
       flash[:notice] = '正常に更新されました。'
     else
-      flash.now[:alart] = '正常に更新されませんでした。'
+      flash.now[:alert] = '正常に更新されませんでした。'
       render :edit
     end
 
