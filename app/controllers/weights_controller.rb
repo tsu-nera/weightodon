@@ -2,10 +2,6 @@ class WeightsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:destroy]
 
-  def index
-    @weights = current_user.weights
-  end
-
   def show
     @weight = Weight.find(params[:id])
   end

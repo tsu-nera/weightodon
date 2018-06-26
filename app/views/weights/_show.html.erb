@@ -1,8 +1,0 @@
-<h1>id: <%= @weight.id %> の詳細ページ</h1>
-
-<p><%= @weight.created_at %></p>
-<p><%= @weight.value %> kg</p>
-
-<%= link_to '一覧に戻る', weights_path %>
-<%= link_to '編集する', edit_weight_path(@weight) %>
-<%= link_to '削除する', @weight, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>

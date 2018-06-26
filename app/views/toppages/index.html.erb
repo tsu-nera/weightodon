@@ -23,6 +23,8 @@
                               method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
             </tr>
           <% end %>
+          <%= paginate @weights %>
+
         </tbody>
       </table>
     </div>

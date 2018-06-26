@@ -1,9 +1,0 @@
-<h1>体重履歴</h1>
-
-<ul>
-  <% @weights.each do |weight| %>
-    <li><%= link_to weight.id, weight %> :<%= weight.created_at %> <%= weight.value %> kg</li>
-  <% end %>
-</ul>
-
-<%= link_to '新規投稿', new_weight_path %>

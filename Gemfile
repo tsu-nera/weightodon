@@ -62,3 +62,5 @@ gem 'devise-bootstrap-views'
 gem 'devise-i18n'
 
 gem 'rails-i18n'
+
+gem 'kaminari'
