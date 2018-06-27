@@ -1,24 +1,23 @@
-# README
+# 体重どん
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## リンク集
+- 企画書
 
-Things you may want to cover:
+  https://docs.google.com/document/d/1721Zcqjhb9AqubJigqQEoGYz5SfgwszF6qinSpVi7BU/edit?usp=sharing
 
-* Ruby version
+- 機能仕様書
 
-* System dependencies
+  https://docs.google.com/document/d/13FRd2uKHB69zKxq10cxEre0nLXosVcaE3j7RC0lVyEU/edit?usp=sharing
 
-* Configuration
+- Cacoo
 
-* Database creation
+  https://cacoo.com/diagrams/zhADMfoiy6liaIyZ
+  	
+- ソースコード
 
-* Database initialization
+  https://github.com/tsu-nera/weightodon
+  
+- 課題管理
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  https://trello.com/b/8C7HqpoW/weightodon
+  
