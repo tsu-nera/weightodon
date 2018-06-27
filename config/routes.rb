@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'toppages#index'
+  get '/toppages', :to => 'toppages#show'
   devise_for :users, controllers: { registrations: 'registrations' }
 
   resources :weights

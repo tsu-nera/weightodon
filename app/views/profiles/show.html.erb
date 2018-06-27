@@ -40,8 +40,9 @@
       </tr>
     </table>
 
-    <%= link_to 'プロフィール編集', edit_profile_path(@profile) ,class: 'label label-warning'%>
-
+    <% if user_signed_in? %>
+      <%= link_to 'プロフィール編集', edit_profile_path(@profile) ,class: 'label label-warning'%>
+    <% end %>
     <% end %>
   </div>
 </div>
