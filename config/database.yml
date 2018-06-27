@@ -54,5 +54,5 @@ production:
   database: weightodon_production
   username: weightodon
   password: <%= ENV['WEIGHTODON_DATABASE_PASSWORD'] %>
-  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  secret_key_base: <%= ENV["RAILS_MASTER_KEY"] %>
 
