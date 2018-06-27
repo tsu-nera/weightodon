@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_26_145245) do
+ActiveRecord::Schema.define(version: 2018_06_27_201150) do
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nicname"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2018_06_26_145245) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.timestamp "date"
+    t.datetime "date"
     t.index ["user_id"], name: "index_weights_on_user_id"
   end
 
