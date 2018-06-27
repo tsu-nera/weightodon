@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :weights
+  has_many :weights, -> {order("date DESC")}
 
   # after_create :build_default_profile
   has_one :profile, dependent: :destroy
