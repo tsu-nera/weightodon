@@ -14,12 +14,11 @@ class WeightsController < ApplicationController
     @weight = current_user.weights.build(weight_params)
     if @weight.save
       flash[:notice] = '体重を投稿しました。'
-      redirect_to root_url
     else
-      @wights = current_user.weights.order('created_at DESC')
-      flash.now[:alert] = '体重の投稿に失敗しました。'
-      render 'toppages/index'
+      @weights = current_user.weights.page(params[:page])
+      flash[:alert] = '体重の投稿に失敗しました。'
     end
+    redirect_to root_url
   end
 
   def edit

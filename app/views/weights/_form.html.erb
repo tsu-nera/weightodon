@@ -11,10 +11,14 @@
       </div>
     <% end %>
 
-    <div class="form-group">
-      <%= f.label :value, '体重' %>
-      <%= f.text_field :value, class: 'form-control' %>
-    </div>
+      <div class="form-group">
+        <%= f.label :value, '体重' %>
+        <%= f.text_field :value, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :date, '日時' %>
+        <%= f.datetime_select :date, class: 'form-control'%>
+      </div>
       <%= f.submit '投稿', class: 'btn btn-primary' %>
       <%= link_to 'キャンセル', root_path, class: 'btn btn-default' %>
   <% end %>

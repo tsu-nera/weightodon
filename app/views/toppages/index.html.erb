@@ -16,7 +16,7 @@
         <tbody>
           <% @weights.each do |weight| %>
             <tr>
-              <td><%= weight.created_at.strftime('%Y-%m-%d %H:%m') %></td>
+              <td><%= weight.date.strftime('%Y-%m-%d %H:%M') %></td>
               <td><%= weight.value %> kg</td>
               <td><%= link_to '編集', edit_weight_path(weight), class: 'label label-warning' %>
                   <%= link_to '削除', weight, class: 'label label-danger',

@@ -1,6 +1,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
 
+  validates :user_id, presence: true
   validates :nicname, presence: true, length: {maximum: 15}
   validates :public, presence: true
   validates :height, presence: true, numericality: true
