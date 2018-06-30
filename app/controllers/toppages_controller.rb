@@ -27,7 +27,18 @@ class ToppagesController < ApplicationController
     @user = User.find(params[:id])
     @weights = @user.weights.page(params[:page])
     @profile = @user.profile
-    gon.graph_weights = @user.weights.pluck(:value)
-    gon.graph_date = @user.weights.pluck(:date).map{|date| date.strftime("%m/%d")}
+    if params[:duration] == "all"
+      @graph_weights = @user.weights.pluck(:value)
+      @graph_date = @user.weights.pluck(:date).map{|date| date.strftime("%m/%d")}
+    elsif params[:duration] == "3month"
+      @graph_weights = @user.weights.pluck(:value).take(90)
+      @graph_date = @user.weights.pluck(:date).map{|date| date.strftime("%m/%d")}.take(90)
+    elsif params[:duration] == "month"
+      @graph_weights = @user.weights.pluck(:value).take(30)
+      @graph_date = @user.weights.pluck(:date).map{|date| date.strftime("%m/%d")}.take(30)
+    else
+      @graph_weights = @user.weights.pluck(:value).take(7)
+      @graph_date = @user.weights.pluck(:date).map{|date| date.strftime("%m/%d")}.take(7)
+    end
   end
 end
