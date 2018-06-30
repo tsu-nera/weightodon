@@ -1,17 +1,17 @@
 <canvas id="myChart"></canvas>
 <script>
-    var ctx = document.getElementById("myChart").getContext('2d');
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: gon.graph_date,
-            datasets: [{
-                label: "weight",
-                data: gon.graph_weights,
-                backgroundColor: 'rgba(255, 99, 132, 1.0)',
-                borderColor: 'rgba(255, 50, 132, 1.0)',
-                fill: false
-            }]
-        }
-    });
+  var ctx = document.getElementById("myChart").getContext('2d');
+  var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: <%= raw @graph_date %>,
+          datasets: [{
+              label: "weight",
+              data: <%= raw @graph_weights %>,
+              backgroundColor: 'rgba(255, 99, 132, 1.0)',
+              borderColor: 'rgba(255, 50, 132, 1.0)',
+              fill: false
+          }]
+      },
+  });
 </script>

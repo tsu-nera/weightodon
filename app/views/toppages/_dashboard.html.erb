@@ -6,6 +6,12 @@
     <% if user_signed_in? %>
       <%= link_to '体重投稿', new_weight_path ,class: 'btn btn-primary'%>
     <% end %>
+    <ul class="nav nav-tabs nav-justified">
+      <li><%= link_to '7days', root_path(duration: "week") %></li>
+      <li><%= link_to '30days', root_path(duration: "month") %></li>
+      <li><%= link_to '90days', root_path(duration: "3month") %></li>
+      <li><%= link_to 'All', root_path(duration: "all") %></li>
+    </ul>
     <%= render 'graph' %>
     <table class="table table-striped">
       <thead>
