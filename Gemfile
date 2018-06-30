@@ -70,3 +70,4 @@ group :production do
 end
 
 gem 'chart-js-rails'
+gem "gon"

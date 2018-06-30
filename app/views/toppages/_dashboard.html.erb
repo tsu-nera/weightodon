@@ -6,6 +6,7 @@
     <% if user_signed_in? %>
       <%= link_to '体重投稿', new_weight_path ,class: 'btn btn-primary'%>
     <% end %>
+    <%= render 'graph' %>
     <table class="table table-striped">
       <thead>
       <tr>
