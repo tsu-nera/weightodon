@@ -1,4 +1,11 @@
-# 体重どん
+# Weightodon
+- ダッシュポード
+
+  https://weightodon.herokuapp.com
+
+- マストドン: 
+   
+  https://weightodon.site
 
 ## リンク集
 - 企画書
