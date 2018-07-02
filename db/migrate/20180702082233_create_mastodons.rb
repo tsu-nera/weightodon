@@ -1,6 +1,6 @@
-class CreateMastodons < ActiveRecord::Migration[5.2]
+class CreateWeightodons < ActiveRecord::Migration[5.2]
   def change
-    create_table :mastodons do |t|
+    create_table :weightodons do |t|
       t.string :access_token
       t.string :client_id
       t.string :client_secret

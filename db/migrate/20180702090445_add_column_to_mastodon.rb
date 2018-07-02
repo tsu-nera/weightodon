@@ -1,6 +1,6 @@
-class AddColumnToMastodon < ActiveRecord::Migration[5.2]
+class AddColumnToWeightodon < ActiveRecord::Migration[5.2]
   def change
-    add_column :mastodons, :username, :string
-    add_column :mastodons, :password, :string
+    add_column :weightodons, :username, :string
+    add_column :weightodons, :password, :string
   end
 end

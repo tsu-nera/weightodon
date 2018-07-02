@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :weights
 
   resources :profiles, only: [:show, :new, :create, :edit, :update]
-  resources :mastodons, only: [:new, :create, :destroy]
+  resources :weightodons, only: [:new, :create, :destroy]
 end

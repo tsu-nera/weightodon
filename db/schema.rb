@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_07_02_090445) do
 
-  create_table "mastodons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "weightodons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "access_token"
     t.string "client_id"
     t.string "client_secret"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2018_07_02_090445) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "password"
-    t.index ["user_id"], name: "index_mastodons_on_user_id"
+    t.index ["user_id"], name: "index_weightodons_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2018_07_02_090445) do
     t.index ["user_id"], name: "index_weights_on_user_id"
   end
 
-  add_foreign_key "mastodons", "users"
+  add_foreign_key "weightodons", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "weights", "users"
 end

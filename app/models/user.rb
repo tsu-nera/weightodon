@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   # after_create :build_default_profile
   has_one :profile, dependent: :destroy
-  has_one :mastodon, dependent: :destroy
+  has_one :weightodon, dependent: :destroy
 
   # def build_default_profile
   #   @profile = Profile.new(user_id: self.id)
