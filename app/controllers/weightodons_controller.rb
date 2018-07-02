@@ -2,6 +2,9 @@ class WeightodonsController < ApplicationController
   WEIGHTODON_HOST = 'https://weightodon.site'
   WEIGHITODON_APP_NAME = 'weightodon'
 
+  def show
+  end
+
   def new
     @weightodon = Weightodon.new
   end

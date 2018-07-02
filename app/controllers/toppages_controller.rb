@@ -4,6 +4,9 @@ class ToppagesController < ApplicationController
       @user = current_user
       @weights = current_user.weights.page(params[:page])
       @profile = current_user.profile
+      @weightodon = current_user.weightodon
+      client = Mastodon::REST::Client.new(base_url: 'https://weightodon.site', bearer_token: @weightodon.access_token)
+      @account = client.verify_credentials
 
       if params[:duration] == "all"
         @graph_weights = current_user.weights.pluck(:value)
@@ -27,6 +30,10 @@ class ToppagesController < ApplicationController
     @user = User.find(params[:id])
     @weights = @user.weights.page(params[:page])
     @profile = @user.profile
+    @weightodon = @user.weightodon
+    client = Mastodon::REST::Client.new(base_url: 'https://weightodon.site', bearer_token: @weightodon.access_token)
+    @account = client.verify_credentials
+
     if params[:duration] == "all"
       @graph_weights = @user.weights.pluck(:value)
       @graph_date = @user.weights.pluck(:date).map{|date| date.strftime("%m/%d")}
