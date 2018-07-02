@@ -3,13 +3,21 @@
 <div class="row">
   <div class="col-xs-4">
     <%= form_for(@weightodon) do |f| %>
+      <p></p>
+      <h3>手順</h3>
+      <p>1. access_token を取得します。
+        <a href="https://takahashim.github.io/mastodon-access-token/" target="_blank">ココから</a></p>
+      <ul>
+        <li>Mastodon URL: https://weightodon.site</li>
+        <li>Client Name: weightdon</li>
+        <li>Web site: [空白]</li>
+        <li>Scopes: read write follow</li>
+      </ul>
+      <img src="/access_token_generator_for_mastodon_api.png">
+      <p>2. 取得した access_token 入力します。</p>
     <div class="form-group">
-      <%= f.label :username, 'ユーザ名' %>
-      <%= f.text_field :username, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :password, 'パスワード' %>
-      <%= f.text_field :password, class: 'form-control' %>
+      <%= f.label :access_token, 'access_token' %>
+      <%= f.text_field :access_token, class: 'form-control' %>
     </div>
       <%= f.submit '連携', class: 'btn btn-primary' %>
       <%= link_to 'キャンセル', root_path, class: 'btn btn-default' %>

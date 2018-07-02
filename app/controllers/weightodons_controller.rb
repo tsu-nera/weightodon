@@ -7,16 +7,7 @@ class WeightodonsController < ApplicationController
   end
 
   def create
-    mastodon = Mastodon::REST::Client.new(base_url: WEIGHTODON_HOST)
-    app = mastodon.create_app(WEIGHITODON_APP_NAME, 'urn:ietf:wg:oauth:2.0:oob', 'read write follow')
-
-    client = OAuth2::Client.new(app.client_id, app.client_secret, site: WEIGHTODON_HOST)
-    token = client.password.get_token(params[:username], params[:password], scope: 'read write follow')
-
-
-    @weightodon = Weightodon.new
-    @weightodon.user_id = current_user.id
-    @weightodon.access_token = token
+    @weightodon = current_user.build_weightodon(weightodon_params)
 
     if @weightodon.save
       flash[:notice] = 'マストドンとの連携に成功しました。'
@@ -28,5 +19,12 @@ class WeightodonsController < ApplicationController
   end
 
   def destroy
+    current_user.weightodon.destroy
+    flash[:notice] = 'マストドンとの連携を解除しました。'
+    redirect_to root_url
+  end
+
+  def weightodon_params()
+    params.require(:weightodon).permit(:access_token)
   end
 end

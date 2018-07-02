@@ -37,7 +37,7 @@
           <td><%= weight.value %> kg</td>
           <% if user_signed_in? %>
             <td><%= link_to '編集', edit_weight_path(weight), class: 'label label-warning' %>
-                <%= link_to '削除', weight, class: 'label label-danger',
+              <%= link_to '削除', weight, class: 'label label-danger',
                           method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
           <% end %>
         </tr>

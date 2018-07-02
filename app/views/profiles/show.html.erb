@@ -42,8 +42,13 @@
 
     <% if user_signed_in? %>
       <%= link_to 'プロフィール編集', edit_profile_path(@profile) ,class: 'label label-warning'%>
-      <%= link_to 'マストドン連携', new_weightodon_path ,class: 'label label-info'%>
-    <% end %>
+      <% if mastodon_connected? %>
+        <%= link_to 'マストドン連携解除', current_user.weightodon, class: 'label label-danger',
+                    method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+      <% else %>
+        <%= link_to 'マストドン連携', new_weightodon_path ,class: 'label label-info'%>
+      <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
