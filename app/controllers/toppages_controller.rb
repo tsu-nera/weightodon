@@ -21,6 +21,10 @@ class ToppagesController < ApplicationController
         @graph_weights = current_user.weights.pluck(:value).take(7)
         @graph_date = current_user.weights.pluck(:date).map{|date| date.strftime("%m/%d")}.take(7)
       end
+
+      @graph_weights.reverse!
+      @graph_date.reverse!
+
     else
       @profiles = Profile.where(public: "公開").order("updated_at DESC").limit(10)
     end
@@ -47,5 +51,8 @@ class ToppagesController < ApplicationController
       @graph_weights = @user.weights.pluck(:value).take(7)
       @graph_date = @user.weights.pluck(:date).map{|date| date.strftime("%m/%d")}.take(7)
     end
+
+    @graph_weights.reverse!
+    @graph_date.reverse!
   end
 end
