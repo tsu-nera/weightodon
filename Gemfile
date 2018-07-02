@@ -70,3 +70,6 @@ group :production do
 end
 
 gem 'chart-js-rails'
+
+gem 'oauth2'
+gem 'mastodon-api', require: 'mastodon'
