@@ -13,6 +13,13 @@ class WeightsController < ApplicationController
   def create
     @weight = current_user.weights.build(weight_params)
     if @weight.save
+
+      if mastodon_connected?
+        @weightodon = current_user.weightodon
+        client = Mastodon::REST::Client.new(base_url: 'https://weightodon.site', bearer_token: @weightodon.access_token)
+        client.create_status("絶対痩せるぞ！！　絶対運動するぞ！！　絶対ダイエットするぞ！！　今の体重は %.1f kg！！ #web" % [@weight.value])
+      end
+
       flash[:notice] = '体重を投稿しました。'
     else
       @weights = current_user.weights.page(params[:page])

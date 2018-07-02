@@ -1,7 +1,11 @@
 <div class="row">
   <aside class="col-xs-4">
     <%= render :template => 'profiles/show' %>
-    <%= render :template => 'weightodons/show' %>
+    <% if user_signed_in? %>
+      <%= render :template => 'weightodons/show' %>
+    <% else %>
+      マストドンもフォローしてね！ <a href="<%= @account.url %>" target="_blank">@<%= @account.username %></a>
+    <% end%>
   </aside>
   <div class="col-xs-8">
     <% if user_signed_in? %>
