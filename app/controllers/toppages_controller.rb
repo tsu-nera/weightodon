@@ -34,9 +34,11 @@ class ToppagesController < ApplicationController
     @user = User.find(params[:id])
     @weights = @user.weights.page(params[:page])
     @profile = @user.profile
-    @weightodon = @user.weightodon
-    client = Mastodon::REST::Client.new(base_url: 'https://weightodon.site', bearer_token: @weightodon.access_token)
-    @account = client.verify_credentials
+    if @user.weightodon
+      @weightodon = @user.weightodon
+      client = Mastodon::REST::Client.new(base_url: 'https://weightodon.site', bearer_token: @weightodon.access_token)
+      @account = client.verify_credentials
+    end
 
     if params[:duration] == "all"
       @graph_weights = @user.weights.pluck(:value)
