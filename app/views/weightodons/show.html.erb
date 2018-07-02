@@ -1,5 +1,7 @@
-<script>
-    $(document).ready(function() {
+<% if mastodon_connected? %>
+  <script>
+      $(document).ready(function() {
+// jQUERY is required!
           var mapi = new MastodonApi({
               target_selector  : '#myTimeline'
               ,instance_uri    : 'https://weightodon.site'
@@ -7,6 +9,7 @@
               ,account_id      : '<%= @account.id %>'
           });
       });
-</script>
+  </script>
 
-<div id="myTimeline" class="mastodon-timeline mastodon-timeline-light"></div>
+  <div id="myTimeline" class="mastodon-timeline mastodon-timeline-light"></div>
+<% end %>
