@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :weights, except: [:index]
   post '/remotes', :to => 'remotes#create'
 
-  resources :profiles, only: [:show, :new, :create, :edit, :update]
+  resources :profiles, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :weightodons, only: [:show, :new, :create, :destroy]
 end

@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
+    @user = @profile.user
   end
 
   def new
@@ -34,6 +35,17 @@ class ProfilesController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    if not current_user.tokens.first.nil?
+      current_user.remove_token(:activate)
+    end
+    @token = current_user.add_token(:activate)
+
+    logger.debug(@token)
+  end
+
+  private
 
   def profile_params
     params.require(:profile).permit(

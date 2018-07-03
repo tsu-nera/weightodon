@@ -48,7 +48,9 @@
       <% else %>
         <%= link_to 'マストドン連携', new_weightodon_path ,class: 'label label-info'%>
       <% end %>
-      <% end %>
+      <%= link_to 'トークン発行', current_user.profile ,class: 'label label-default',
+                  method: :delete, data: { confirm: '既存のトークンは破棄され、新しいトークンを生成します。' } %>
     <% end %>
+  <% end %>
   </div>
 </div>

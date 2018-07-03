@@ -10,19 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_02_090445) do
-
-  create_table "weightodons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "access_token"
-    t.string "client_id"
-    t.string "client_secret"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "username"
-    t.string "password"
-    t.index ["user_id"], name: "index_weightodons_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2018_07_03_175644) do
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nicname"
@@ -36,6 +24,20 @@ ActiveRecord::Schema.define(version: 2018_07_02_090445) do
     t.datetime "updated_at", null: false
     t.integer "age"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "tokens", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "tokenizable_type", null: false
+    t.integer "tokenizable_id", null: false
+    t.string "token", null: false
+    t.text "data"
+    t.datetime "expires_at"
+    t.datetime "created_at", null: false
+    t.index ["expires_at"], name: "index_tokens_on_expires_at"
+    t.index ["token"], name: "index_tokens_on_token"
+    t.index ["tokenizable_id", "tokenizable_type", "name"], name: "index_tokens_on_tokenizable_id_and_tokenizable_type_and_name", unique: true
+    t.index ["tokenizable_type", "tokenizable_id"], name: "index_tokens_on_tokenizable_type_and_tokenizable_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,6 +57,18 @@ ActiveRecord::Schema.define(version: 2018_07_02_090445) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weightodons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "access_token"
+    t.string "client_id"
+    t.string "client_secret"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "password"
+    t.index ["user_id"], name: "index_weightodons_on_user_id"
+  end
+
   create_table "weights", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.float "value"
     t.bigint "user_id"
@@ -64,7 +78,7 @@ ActiveRecord::Schema.define(version: 2018_07_02_090445) do
     t.index ["user_id"], name: "index_weights_on_user_id"
   end
 
-  add_foreign_key "weightodons", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "weightodons", "users"
   add_foreign_key "weights", "users"
 end
