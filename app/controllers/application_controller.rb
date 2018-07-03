@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
-  include ApplicationHelper
+  include WeightodonsHelper
   include ProfilesHelper
 end
