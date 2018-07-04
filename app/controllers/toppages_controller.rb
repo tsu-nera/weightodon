@@ -5,7 +5,7 @@ class ToppagesController < ApplicationController
       @weights = current_user.weights.page(params[:page])
       @profile = current_user.profile
 
-      if current_user.weightodon
+      if mastodon_connected?(current_user)
         @weightodon = current_user.weightodon
         client = Mastodon::REST::Client.new(base_url: 'https://weightodon.site', bearer_token: @weightodon.access_token)
         @account = client.verify_credentials
@@ -37,7 +37,8 @@ class ToppagesController < ApplicationController
     @user = User.find(params[:id])
     @weights = @user.weights.page(params[:page])
     @profile = @user.profile
-    if @user.weightodon
+
+    if mastodon_connected?(@user)
       @weightodon = @user.weightodon
       client = Mastodon::REST::Client.new(base_url: 'https://weightodon.site', bearer_token: @weightodon.access_token)
       @account = client.verify_credentials
