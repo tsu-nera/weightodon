@@ -7,8 +7,7 @@ class ToppagesController < ApplicationController
 
       if mastodon_connected?(current_user)
         @weightodon = current_user.weightodon
-        client = Mastodon::REST::Client.new(base_url: 'https://weightodon.site', bearer_token: @weightodon.access_token)
-        @account = client.verify_credentials
+        @account = valid_account?(@weightodon.access_token)
       end
 
       if params[:duration] == "all"
