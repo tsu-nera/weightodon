@@ -28,9 +28,8 @@ services:
   web:
     restart: always
     build: .
-    # command: bundle exec unicorn_rails -p 3000 -c /app/config/unicorn.rb
-    # command: bundle exec rails s -p 3000 -b '0.0.0.0'
-    command: bash -c "rm -f /app/tmp/pids/server.pid; bundle exec rails s -p 3001 -b '0.0.0.0'"
+    command: bundle exec unicorn_rails -p 3001 -c /app/config/unicorn.rb
+    # command: bash -c "rm -f /app/tmp/pids/server.pid; bundle exec rails s -p 3001 -b '0.0.0.0'"
     container_name: wtdn-web
     volumes:
       - .:/app
