@@ -1,0 +1,70 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:1.11.10-alpine
+    container_name: wtdn-nginx
+    ports:
+      - 9091:9091
+    restart: always
+    tty: true
+    environment:
+      VIRTUAL_HOST: www.weightodon.site
+      VIRTUAL_PORT: 9091
+      VIRTUAL_PROTO: https
+      LETSENCRYPT_HOST: www.weightodon.site
+      LETSENCRYPT_EMAIL: fox10225fox@gmail.com
+      LETSENCRYPT_TEST: "false"
+    links:
+      - web
+    volumes:
+      - ./setting/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./setting/nginx/conf:/etc/nginx/conf/:ro
+    volumes_from:
+      - container:proxy-nginx
+    networks:
+      - front
+      - back-wtdn
+
+  web:
+    restart: always
+    build: .
+    # command: bundle exec unicorn_rails -p 3000 -c /app/config/unicorn.rb
+    # command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    command: bash -c "rm -f /app/tmp/pids/server.pid; bundle exec rails s -p 3001 -b '0.0.0.0'"
+    container_name: wtdn-web
+    volumes:
+      - .:/app
+      - bundle:/bundle
+    environment:
+      TZ: "Asia/Tokyo"
+      RAILS_ENV: production
+      RAILS_ROOT: /app
+      SECRET_KEY_BASE: 7066cf88b55e4b76d4bc9196a96acc1ebc2d809dd6f6f3e854ddd6dba75a2616eee5de216a221b2b13da4932f2c6d6025e0d604b83a2c24c88701c2c2641214d
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+    ports:
+      - "127.0.0.1:3001:3001"
+    networks:
+      - back-wtdn
+
+  db:
+    restart: always
+    image: postgres:alpine
+    container_name: wtdn-db
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    networks:
+      - back-wtdn
+    
+volumes:
+  db-volume:
+  bundle:
+    driver: local
+
+networks:
+  front:
+    external: true
+  back-wtdn:
+    external: true

@@ -52,7 +52,8 @@ production:
   encoding: unicode
   pool: 5
   database: weightodon_production
-  username: weightodon
-  password: <%= ENV['WEIGHTODON_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: 
   secret_key_base: <%= ENV["RAILS_MASTER_KEY"] %>
-
+  host: db
+  port: 5432
