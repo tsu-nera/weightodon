@@ -10,4 +10,14 @@ module WeightodonsHelper
   def mastodon_connected?(user = current_user)
     not user.weightodon.nil?
   end
+
+  def valid_account?(token)
+    client = Mastodon::REST::Client.new(base_url: 'https://weightodon.site', bearer_token: token)
+    begin
+      accuunt = client.verify_credentials
+    rescue
+      accuunt = nil
+    end
+    accuunt
+  end
 end

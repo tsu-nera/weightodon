@@ -1,7 +1,7 @@
 # Weightodon
 - ダッシュポード
 
-  https://weightodon.herokuapp.com
+  https://www.weightodon.com
 
 - マストドン: 
    
