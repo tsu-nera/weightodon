@@ -12,10 +12,14 @@ class WeightodonsController < ApplicationController
   def create
     @weightodon = current_user.build_weightodon(weightodon_params)
 
-    if valid_account?(@weightodon.access_token) and @weightodon.save
-      flash[:notice] = 'マストドンとの連携に成功しました。'
+    if valid_account?(@weightodon.access_token)
+      if @weightodon.save
+        flash[:notice] = 'マストドンとの連携に成功しました。'
+      else
+        flash[:alert] = 'マストドンとの連携に失敗しました。'
+      end
     else
-      flash[:alert] = 'マストドンとの連携に失敗しました。'
+      flash[:alert] = '不正な access_tokenです'
     end
 
     redirect_to root_url
