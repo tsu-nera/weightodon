@@ -41,8 +41,6 @@ class ProfilesController < ApplicationController
       current_user.remove_token(:activate)
     end
     @token = current_user.add_token(:activate)
-
-    logger.debug(@token)
   end
 
   private
