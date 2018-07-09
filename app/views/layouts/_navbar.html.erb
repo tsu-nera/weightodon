@@ -1,26 +1,26 @@
 <header>
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Weightodon</a>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li><%= link_to "Settings", edit_user_registration_path %> </li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path %> </li>
-            <li><%= link_to "Login", new_user_session_path %></li>
-          <% end %>
-        </ul>
-      </div>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">WeightDon</a>
+      <ul class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+          <li><%= link_to "Settings", edit_user_registration_path %> </li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %> </li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <% if user_signed_in? %>
+          <li><%= link_to "Settings", edit_user_registration_path %> </li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %> </li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 </header>

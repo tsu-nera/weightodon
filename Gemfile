@@ -78,3 +78,5 @@ gem 'mastodon-api', require: 'mastodon'
 gem 'tokens'
 
 gem 'unicorn'
+
+gem 'materialize-sass'

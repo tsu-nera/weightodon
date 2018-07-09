@@ -1,6 +1,8 @@
 <% if user_signed_in? %>
   <%= render 'dashboard' %>
 <% else %>
+  <%= render 'welcome' %>
+
   <div class="center jumbotron">
     <div class="text-center">
       <h1>Welcome to the Weightodon</h1>
