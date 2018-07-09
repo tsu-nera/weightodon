@@ -67,6 +67,7 @@ gem 'kaminari'
 
 group :production do
   gem 'pg', '0.21.0'
+  gem 'google-analytics-rails'
 end
 
 gem 'chart-js-rails'
