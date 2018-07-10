@@ -18,7 +18,7 @@ class WeightsController < ApplicationController
 
       flash[:notice] = '体重を投稿しました。'
     else
-      @weights = current_user.weights.page(params[:page])
+      @weights = current_user.weights.page(params[:page]).per(14)
       flash[:alert] = '体重の投稿に失敗しました。'
     end
     redirect_to root_url

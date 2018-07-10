@@ -2,7 +2,7 @@ class ToppagesController < ApplicationController
   def index
     if user_signed_in?
       @user = current_user
-      @weights = current_user.weights.page(params[:page])
+      @weights = current_user.weights.page(params[:page]).per(14)
       @profile = current_user.profile
 
       if mastodon_connected?(current_user)
@@ -34,7 +34,7 @@ class ToppagesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @weights = @user.weights.page(params[:page])
+    @weights = @user.weights.page(params[:page]).per(14)
     @profile = @user.profile
 
     if mastodon_connected?(@user)
