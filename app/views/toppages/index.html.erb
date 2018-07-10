@@ -2,28 +2,4 @@
   <%= render 'dashboard'%>
 <% else %>
   <%= render 'welcome' %>
-
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>Welcome to the Weightodon</h1>
-      <%= link_to 'Sign up now!', new_user_registration_path, class: 'btn btn-lg btn-primary' %>
-      <%= link_to 'Go to Mastodon!', "https://weightodon.site", class: 'btn btn-lg btn-default' %>
-    </div>
-  </div>
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th>ニックネーム</th>
-      <th>一言メッセージ</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= link_to profile.nicname, toppages_path(id: profile.user_id) %></td>
-        <td><%= profile.message %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
 <% end %>

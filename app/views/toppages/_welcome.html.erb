@@ -6,9 +6,9 @@
       <h5 class="header col s12 light">A smart weight recording site connected with Mastodon</h5>
     </div>
     <div class="row center">
-      <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">私もやせる</a>
+      <%= link_to '私もやせる', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
+      <%= link_to 'マストドンへ', "https://weightodon.site", id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
     </div>
-    <br><br>
   </div>
 </div>
 
@@ -18,34 +18,52 @@
     <div class="row">
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+          <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
           <h5 class="center">Mastodon</h5>
 
-          <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          <p class="light">Twitterのクローンであるマストドンと連携できます。ソーシャルメディアに自分の体重を晒すのに抵抗がある人は安心してください。完全匿名性のコミュニティをあなたのために用意しています。</p>
         </div>
       </div>
 
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+          <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
           <h5 class="center">Smart Scales</h5>
 
-          <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          <p class="light">スマート体重計からの体重自動入力をサポートします。体重記録でもっとも煩わしい作業は、体重をスマホから入力することでした。WeightoDonとスマート体重計を連携させることで、その入力作業は自動化できます。</p>
         </div>
       </div>
 
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+          <h2 class="center light-blue-text"><i class="material-icons">chat</i></h2>
           <h5 class="center">Smart Speakers</h5>
 
-          <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          <p class="light">スマートスピーカーからの音声入力をサポートします。お風呂あがりやワークアウトのあとなど、スマホを直接操作できないときも大丈夫。スマートスピーカーに話しかけるだけで体重記録ができます。</p>
         </div>
       </div>
     </div>
 
   </div>
-  <br><br>
+</div>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ニックネーム</th>
+      <th>一言メッセージ</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= link_to profile.nicname, toppages_path(id: profile.user_id) %></td>
+        <td><%= profile.message %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>
 
 <footer class="page-footer orange">
