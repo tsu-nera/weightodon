@@ -1,5 +1,5 @@
 <div class="row">
-  <aside class="col-xs-4">
+  <aside class="col s4">
     <%= render :template => 'profiles/show' %>
     <% if user_signed_in? %>
       <%= render :template => 'weightodons/show' %>
@@ -9,23 +9,29 @@
       <% end %>
     <% end%>
   </aside>
-  <div class="col-xs-8">
+  <div class="col s8">
+    <%= link_to '体重投稿', new_weight_path ,class: 'btn btn-primary'%>
+    <nav>
     <% if user_signed_in? %>
-      <%= link_to '体重投稿', new_weight_path ,class: 'btn btn-primary'%>
-      <ul class="nav nav-tabs nav-justified">
-        <li><%= link_to '7days', root_path(duration: "week") %></li>
-        <li><%= link_to '30days', root_path(duration: "month") %></li>
-        <li><%= link_to '90days', root_path(duration: "3month") %></li>
-        <li><%= link_to 'All', root_path(duration: "all") %></li>
-      </ul>
+        <div class="nav-wrapper">
+        <ul id="nav-mobile" class="hide-on-med-and-down">
+          <li><%= link_to '7days', root_path(duration: "week") %></li>
+          <li><%= link_to '30days', root_path(duration: "month") %></li>
+          <li><%= link_to '90days', root_path(duration: "3month") %></li>
+          <li><%= link_to 'All', root_path(duration: "all") %></li>
+        </ul>
+      </div>
     <% else %>
-      <ul class="nav nav-tabs nav-justified">
+      <div class="nav-wrapper">
+      <ul id="nav-mobile" class="hide-on-med-and-down">
         <li><%= link_to '7days', toppages_path(id: @profile.user_id, duration: "week") %></li>
         <li><%= link_to '30days', toppages_path(id: @profile.user_id, duration: "month") %></li>
         <li><%= link_to '90days', toppages_path(id: @profile.user_id, duration: "3month") %></li>
         <li><%= link_to 'All', toppages_path(id: @profile.user_id, duration: "all") %></li>
       </ul>
+      </div>
     <% end %>
+    </nav>
     <%= render 'graph' %>
     <table class="table table-striped">
       <thead>

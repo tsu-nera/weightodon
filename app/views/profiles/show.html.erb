@@ -1,15 +1,15 @@
-<div class="panel panel-default">
+<div class="card">
   <% if !@profile.nil? %>
 
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= @profile.nicname %></h3>
+  <div class="card-title">
+    <h3><%= @profile.nicname %></h3>
   </div>
-  <div class="panel-body">
+  <div class="card-image">
     <img class="media-object img-rounded img-responsive" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+  </div>
 
-    <p></p>
-
-    <table class="table table-bordered">
+  <div class="card-content">
+    <table class="responsive-table">
       <tr>
         <th>ニックネーム</th>
         <td><%= @profile.nicname %></td>
@@ -39,16 +39,17 @@
         <td><%= @profile.message %></td>
       </tr>
     </table>
-
+  </div>
+  <div class="card-action">
     <% if user_signed_in? %>
-      <%= link_to 'プロフィール編集', edit_profile_path(@profile) ,class: 'label label-warning'%>
+      <%= link_to 'プロフィール編集', edit_profile_path(@profile) %>
       <% if mastodon_connected? %>
-        <%= link_to 'マストドン連携解除', current_user.weightodon, class: 'label label-danger',
+        <%= link_to 'マストドン連携解除', current_user.weightodon,
                     method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
       <% else %>
-        <%= link_to 'マストドン連携', new_weightodon_path ,class: 'label label-info'%>
+        <%= link_to 'マストドン連携', new_weightodon_path %>
       <% end %>
-      <%= link_to 'トークン発行', current_user.profile ,class: 'label label-default',
+      <%= link_to 'トークン発行', current_user.profile ,
                   method: :delete, data: { confirm: '既存のトークンは破棄され、新しいトークンを生成します。' } %>
     <% end %>
   <% end %>
