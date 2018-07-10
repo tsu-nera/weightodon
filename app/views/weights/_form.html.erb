@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-4">
+  <div class="col s4">
   <%= form_for(weight) do |f| %>
     <% if weight.errors.any? %>
       <div id="error_explanation">
@@ -11,16 +11,14 @@
       </div>
     <% end %>
 
-      <div class="form-group">
-        <%= f.label :value, '体重' %>
-        <%= f.text_field :value, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :date, '日時' %>
-        <%= f.datetime_select :date, class: 'form-control'%>
-      </div>
-      <%= f.submit '投稿', class: 'btn btn-primary' %>
-      <%= link_to 'キャンセル', root_path, class: 'btn btn-default' %>
+      <%= f.label :value, '体重' %>
+      <%= f.text_field :value, class: 'form-control' %>
+
+      <%= f.label :date, '日時' %>
+      <%= f.datetime_field :date, value: Time.now.strftime("%Y-%m-%dT%H:%M") %>
+
+      <%= f.submit '投稿', class: 'waves-effect waves-light btn orange' %>
+      <%= link_to 'キャンセル', root_path, class: 'waves-effect waves-light btn grey' %>
   <% end %>
   </div>
 </div>
