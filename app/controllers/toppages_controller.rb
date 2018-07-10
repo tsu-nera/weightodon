@@ -39,9 +39,8 @@ class ToppagesController < ApplicationController
 
     if mastodon_connected?(@user)
       @weightodon = @user.weightodon
-      client = Mastodon::REST::Client.new(base_url: 'https://weightodon.site', bearer_token: @weightodon.access_token)
-      @account = client.verify_credentials
-    end
+      @account = valid_account?(@weightodon.access_token)
+   end
 
     if params[:duration] == "all"
       @graph_weights = @user.weights.pluck(:value)
