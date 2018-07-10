@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-4">
+  <div class="col s4">
     <%= form_for(@profile) do |f| %>
       <% if @profile.errors.any? %>
         <div id="error_explanation">
@@ -11,36 +11,38 @@
         </div>
       <% end %>
 
-      <div class="form-group">
         <%= f.label :nicname, 'ニックネーム' %>
-        <%= f.text_field :nicname, class: 'form-control' %>
-      </div>
-      <div class="form-group">
+        <%= f.text_field :nicname  %>
+
+      <div class="input-field">
+        <select>
+          <option><%= f.radio_button :public, "公開" %> 公開</option>
+          <option><%= f.radio_button :public, "非公開" %> 非公開</option>
+          <option value="" disabled selected>Choose your option</option>
+        </select>
         <%= f.label :public, '公開設定' %>
-        <label><%= f.radio_button :public, "公開" %> 公開 </label>
-        <label><%= f.radio_button :public, "非公開" %> 非公開 </label>
       </div>
-      <div class="form-group">
+
+
         <%= f.label :height, '身長' %>
-        <%= f.text_field :height, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :start_weight, '開始時の体重' %>
-        <%= f.text_field :start_weight, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :sex, '性別' %>
-        <label><%= f.radio_button :sex, "男" %> 男 </label>
-        <label><%= f.radio_button :sex, "女" %> 女</label>
-      </div>
-      <div class="form-group">
-        <%= f.label :age, '年齢' %>
-        <%= f.text_field :age, class: 'form-control' %>
-      </div>
-      <div class="form-group">
+        <%= f.text_field :height %>
+
+      <%= f.label :start_weight, '開始時の体重' %>
+        <%= f.text_field :start_weight %>
+
+      <label>性別</label>
+      <select class="browser-default">
+        <option value="" disabled selected>選択してください</option>
+        <option value="男"><%= f.radio_button :public, "男" %> 男</option>
+        <option value="女"><%= f.radio_button :public, "女" %> </option>
+      </select>
+
+      <%= f.label :age, '年齢' %>
+        <%= f.text_field :age %>
+
         <%= f.label :message, '一言メッセージ' %>
-        <%= f.text_field :message, class: 'form-control' %>
-      </div>
+        <%= f.text_field :message %>
+
       <%= f.submit '投稿', class: 'btn btn-primary' %>
       <%= link_to 'キャンセル', root_path, class: 'btn btn-default' %>
     <% end %>
