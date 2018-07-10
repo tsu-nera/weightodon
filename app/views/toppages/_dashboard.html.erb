@@ -44,9 +44,12 @@
           <td><%= weight.date.strftime('%Y-%m-%d %H:%M') %></td>
           <td><%= weight.value %> kg</td>
           <% if user_signed_in? %>
-            <td><%= link_to '編集', edit_weight_path(weight), class: 'label label-warning' %>
-              <%= link_to '削除', weight, class: 'label label-danger',
-                          method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
+            <td>
+              <i class="tiny material-icons">edit</i>
+              <%= link_to '編集', edit_weight_path(weight) %>
+              <i class="tiny material-icons">delete</i>
+              <%= link_to '削除', weight, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+            </td>
           <% end %>
         </tr>
       <% end %>
