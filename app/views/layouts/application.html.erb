@@ -35,6 +35,7 @@
 <body>
 <%= render 'layouts/navbar' %>
 
+<main>
 <% if not @welcome.nil? %>
   <%= render 'layouts/flash_messages' %>
   <%= yield %>
@@ -44,6 +45,7 @@
     <%= yield %>
   </div>
 <% end %>
+</main>
 
 <%= render 'layouts/footer' %>
 
