@@ -26,8 +26,8 @@ class ToppagesController < ApplicationController
 
       @graph_weights.reverse!
       @graph_date.reverse!
-
     else
+      @welcome = true
       @profiles = Profile.where(public: "公開").order("updated_at DESC").limit(10)
     end
   end
