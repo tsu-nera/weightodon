@@ -1,30 +1,39 @@
-# Weightodon
+# WeightoDon
 - ダッシュポード
 
-  https://www.weightodon.com
+  https://weightodon.herokuapp.com/
 
-- マストドン: 
+- マストドン
    
   https://weightodon.site
 
-## リンク集
-- 企画書
+## References
+- 企画書(Google Document)
 
   https://docs.google.com/document/d/1721Zcqjhb9AqubJigqQEoGYz5SfgwszF6qinSpVi7BU/edit?usp=sharing
 
-- 機能仕様書
+- 機能仕様書(Google Document)
 
   https://docs.google.com/document/d/13FRd2uKHB69zKxq10cxEre0nLXosVcaE3j7RC0lVyEU/edit?usp=sharing
 
-- Cacoo
+- 設計図(Cacoo)
 
   https://cacoo.com/diagrams/zhADMfoiy6liaIyZ
   	
-- ソースコード
+- ソースコード(GitHub)
 
   https://github.com/tsu-nera/weightodon
   
-- 課題管理
+- 課題管理(GitHub)
 
-  https://trello.com/b/8C7HqpoW/weightodon
+  https://github.com/tsu-nera/weightodon/projects/1
   
+
+- 障害管理(GitHub)
+
+  https://github.com/tsu-nera/weightodon/issues
+  
+  
+- ヘルプ(GitHub)
+
+  https://github.com/tsu-nera/weightodon/wiki
