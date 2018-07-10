@@ -3,16 +3,21 @@
     <br><br>
     <h1 class="header center orange-text">WeightoDon</h1>
     <div class="row center">
+      <h5 class="header col s12 light">スマートな体重記録サイト</h5>
       <h5 class="header col s12 light">A smart weight recording site connected with Mastodon</h5>
     </div>
     <div class="row center">
-      <%= link_to '私もやせる', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
+      <%= link_to 'ダッシュボードへ', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
       <%= link_to 'マストドンへ', "https://weightodon.site", id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
     </div>
   </div>
 </div>
 
+<hr width="600px">
+
 <div class="container">
+  <h4 class="center header light">多彩な連携機能</h4>
+
   <div class="section">
     <!--   Icon Section   -->
     <div class="row">
@@ -43,12 +48,37 @@
         </div>
       </div>
     </div>
-
+  </div>
+  <div class="center">
+    <%= link_to 'もっと詳しく', "#", id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
   </div>
 </div>
 
+<hr width="600px">
+
 <div class="container">
-  <table class="table table-striped">
+  <h4 class="center header light">特徴</h4>
+  <div class="col-md-8 col-md-offset-2 col-sm-12">
+    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>全て無料</h5>
+    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>完全に匿名なマストドンコミュニティ</h5>
+    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>直感的にわかりやすいUIと体重投稿機能</h5>
+    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>見やすいダッシュボードと体重グラフ表示</h5>
+    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>マストドンと連携した体重投稿をサポート</h5>
+    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマート体重計からの自動入力をサポート</h5>
+    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマートスピーカーからの音声入力をサポート</h5>
+  </div>
+  <ul>
+
+  </ul>
+</div>
+
+<hr width="600px">
+
+<div class="container">
+  <div class="col-md-8 col-md-offset-2 col-sm-12">
+  <h4 class="center header light">頑張っている仲間たち</h4>
+
+  <table class="striped">
     <thead>
     <tr>
       <th>ニックネーム</th>
@@ -64,40 +94,15 @@
     <% end %>
     </tbody>
   </table>
+  <br/><br/>
+  </div>
 </div>
 
-<footer class="page-footer orange">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Company Bio</h5>
-        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+<hr width="600px">
+<h4 class="center header light">さあ、あなたもはじめよう</h4>
+<br/>
+<div class="center">
+  <%= link_to 'Sign up Now!', "#", id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
+</div>
 
-
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Settings</h5>
-        <ul>
-          <li><a class="white-text" href="#!">Link 1</a></li>
-          <li><a class="white-text" href="#!">Link 2</a></li>
-          <li><a class="white-text" href="#!">Link 3</a></li>
-          <li><a class="white-text" href="#!">Link 4</a></li>
-        </ul>
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Connect</h5>
-        <ul>
-          <li><a class="white-text" href="#!">Link 1</a></li>
-          <li><a class="white-text" href="#!">Link 2</a></li>
-          <li><a class="white-text" href="#!">Link 3</a></li>
-          <li><a class="white-text" href="#!">Link 4</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-    </div>
-  </div>
-</footer>
+<br/><br/>
