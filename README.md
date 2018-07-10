@@ -1,4 +1,4 @@
-# WeightoDon
+# WeightoDon 
 - ダッシュポード
 
   https://weightodon.herokuapp.com/
@@ -6,6 +6,16 @@
 - マストドン
    
   https://weightodon.site
+  
+## Getting Started
+このプロジェクトは docker-composeで構成管理をしている。
+
+```bash
+$ docker-commpose build
+$ docker-compose up -d
+```
+
+http://localhost:3001 にアクセス。終了するときは、`docker-compose down`
 
 ## References
 - 企画書(Google Document)
