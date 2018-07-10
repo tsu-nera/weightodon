@@ -9,13 +9,17 @@
       <h5 class="header col s12 light">A smart weight recording site connected with Mastodon</h5>
     </div>
     <div class="row center">
-      <%= link_to 'ダッシュボードへ', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
-      <%= link_to 'マストドンへ', "https://weightodon.site", id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
+      <%= link_to 'ダッシュボードへ', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange'%>
+      <%= link_to 'マストドンへ', "https://weightodon.site", id: "download-button", class: 'btn-large waves-effect waves-light orange', target: '_blank' %>
     </div>
   </div>
 </div>
 
-<hr width="600px">
+<br/>
+
+<hr width="800px">
+
+<br/>
 
 <div class="container">
   <h4 class="center header light">多彩な連携機能</h4>
@@ -52,59 +56,70 @@
     </div>
   </div>
   <div class="center">
-    <%= link_to 'もっと詳しく', "#", id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
+    <%= link_to 'もっと詳しく', "https://github.com/tsu-nera/weightodon/wiki", id: "download-button", class: 'btn-large waves-effect waves-light orange', target: '_blank' %>
   </div>
 </div>
 
-<hr width="600px">
+<br/>
+
+<hr width="800px">
+
+<br/>
 
 <div class="container">
   <h4 class="center header light">特徴</h4>
-  <div class="col-md-8 col-md-offset-2 col-sm-12">
-    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>全て無料のオープンソース</h5>
-    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>完全に匿名なマストドンコミュニティ</h5>
-    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>直感的にわかりやすいUIと体重投稿機能</h5>
-    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>見やすいダッシュボードと体重グラフ表示</h5>
-    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>マストドンと連携した体重投稿をサポート</h5>
-    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマート体重計からの自動入力をサポート</h5>
-    <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマートスピーカーからの音声入力をサポート</h5>
+  <div class="row">
+    <div class="col m8 offset-m2 s12">
+      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>全て無料のオープンソース</h5>
+      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>完全に匿名なマストドンコミュニティ</h5>
+      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>直感的にわかりやすいUIと体重投稿機能</h5>
+      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>見やすいダッシュボードと体重グラフ表示</h5>
+      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>マストドンと連携した体重投稿をサポート</h5>
+      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマート体重計からの自動入力をサポート</h5>
+      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマートスピーカーからの音声入力をサポート</h5>
+    </div>
   </div>
-  <ul>
-
-  </ul>
 </div>
 
-<hr width="600px">
+<br/>
+
+<hr width="800px">
+
+<br/>
 
 <div class="container">
-  <div class="col-md-8 col-md-offset-2 col-sm-12">
-  <h4 class="center header light">頑張っている仲間たち</h4>
+  <div class="row">
+    <div class="col m8 offset-m2 s12">
+      <h4 class="center header light">頑張っている仲間たち</h4>
 
-  <table class="striped">
-    <thead>
-    <tr>
-      <th>ニックネーム</th>
-      <th>一言メッセージ</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @profiles.each do |profile| %>
+    <table class="striped">
+      <thead>
       <tr>
-        <td><%= link_to profile.nicname, toppages_path(id: profile.user_id) %></td>
-        <td><%= profile.message %></td>
+        <th>ニックネーム</th>
+        <th>一言メッセージ</th>
       </tr>
-    <% end %>
-    </tbody>
-  </table>
-  <br/><br/>
+      </thead>
+      <tbody>
+      <% @profiles.each do |profile| %>
+        <tr>
+          <td><%= link_to profile.nicname, toppages_path(id: profile.user_id) %></td>
+          <td><%= profile.message %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
   </div>
 </div>
 
-<hr width="600px">
+<br/>
+
+<hr width="800px">
+
 <h4 class="center header light">さあ、あなたもはじめよう</h4>
 <br/>
 <div class="center">
-  <%= link_to 'Sign up Now!', "#", id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
+  <%= link_to 'Join Now!', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
 </div>
 
 <br/><br/>
