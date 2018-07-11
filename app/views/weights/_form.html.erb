@@ -12,7 +12,7 @@
     <% end %>
 
       <%= f.label :value, '体重' %>
-      <%= f.text_field :value, class: 'form-control' %>
+      <%= f.text_field :value, class: 'form-control' ,:autocomplete => :off%>
 
       <%= f.label :date, '日時' %>
       <%= f.datetime_field :date, value: Time.now.strftime("%Y-%m-%dT%H:%M") %>
