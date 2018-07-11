@@ -1,26 +1,24 @@
-<h1>マストドン連携</h1>
+<h3>マストドン連携</h3>
 
 <div class="row">
-  <div class="col-xs-4">
+  <div class="col s6">
     <%= form_for(@weightodon) do |f| %>
       <p></p>
-      <h3>手順</h3>
       <p>1. access_token を取得します。
         <a href="https://takahashim.github.io/mastodon-access-token/" target="_blank">ココから</a></p>
-      <ul>
-        <li>Mastodon URL: https://weightodon.site</li>
-        <li>Client Name: weightodon</li>
-        <li>Web site: [空白]</li>
-        <li>Scopes: read write follow</li>
+      <ul class="collection">
+        <li class="collection-item">Mastodon URL: https://weightodon.site</li>
+        <li class="collection-item">Client Name: weightodon</li>
+        <li class="collection-item">Web site: [空白]</li>
+        <li class="collection-item">Scopes: read write follow</li>
       </ul>
       <img src="/access_token_generator_for_mastodon_api.png">
       <p>2. 取得した access_token 入力します。</p>
-    <div class="form-group">
       <%= f.label :access_token, 'access_token' %>
-      <%= f.text_field :access_token, class: 'form-control' %>
-    </div>
-      <%= f.submit '連携', class: 'btn btn-primary' %>
-      <%= link_to 'キャンセル', root_path, class: 'btn btn-default' %>
+      <%= f.text_field :access_token %>
+
+      <%= f.submit '連携', class: 'waves-effect waves-light btn orange' %>
+      <%= link_to 'キャンセル', root_path, class: 'waves-effect waves-light btn grey' %>
     <% end %>
   </div>
 </div>
