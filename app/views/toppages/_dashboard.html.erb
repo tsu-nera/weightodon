@@ -29,7 +29,7 @@
 
         <% if mastodon_connected? %>
           <li><%= link_to 'マストドン連携解除', current_user.weightodon,
-                          method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
+                          method: :delete, data: { confirm: '本当に解除してよろしいですか？' } %></li>
         <% else %>
           <li><%= link_to 'マストドン連携', new_weightodon_path %></li>
         <% end %>
