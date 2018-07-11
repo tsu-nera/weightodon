@@ -1,6 +1,8 @@
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
+<% unless flash.empty? %>
+  <script>
+      <% flash.each do |f| %>
+      <% type=f[0].to_s.gsub('alert', 'red').gsub('warning', 'orange').gsub('notice', 'green') %>
+      M.toast({html: '<%= f[1] %>', classes: '<%= type %>'});
+      <% end %>
+  </script>
 <% end %>
