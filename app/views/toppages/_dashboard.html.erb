@@ -11,8 +11,9 @@
   </aside>
   <div class="col s8">
     <br/>
-    <%= link_to '体重投稿', new_weight_path ,class: 'waves-effect waves-light btn-large orange'%>
-
+    <% if user_signed_in? %>
+      <%= link_to '体重投稿', new_weight_path ,class: 'waves-effect waves-light btn-large orange'%>
+    <% end %>
     <ul class="tabs">
       <% if user_signed_in? %>
         <li class="tab col s3"><%= link_to '7days', root_path(duration: "week") %></li>
