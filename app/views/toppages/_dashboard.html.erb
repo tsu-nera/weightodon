@@ -22,7 +22,7 @@
     <br/>
 
     <% if user_signed_in? %>
-      <a class='dropdown-trigger right black-text' href='#' data-target='dropdown1'><i class="material-icons">more_vert</i></a>
+      <a class='dropdown-trigger right black-text' href='#' data-target='dropdown1'><i class="material-icons">menu</i></a>
 
       <ul id='dropdown1' class='dropdown-content'>
         <li><%= link_to 'プロフィール編集', edit_profile_path(@profile), data: {turbolinks: false},class: 'right'%></li>
