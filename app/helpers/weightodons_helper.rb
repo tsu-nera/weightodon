@@ -8,7 +8,11 @@ module WeightodonsHelper
   end
 
   def send_weightodon(user, weight)
-    share_url = "https://weightodon.herokuapp.com/toppages?id=%d" % [user.id]
+    if user.profile.public == "公開"
+      share_url = "https://weightodon.herokuapp.com/toppages?id=%d" % [user.id]
+    else
+      share_url = ""
+    end
     toot(user, "絶対痩せるぞ！！　絶対運動するぞ！！　絶対ダイエットするぞ！！　今の体重は %.1f kg！！ #web %s" % [weight, share_url])
   end
 
