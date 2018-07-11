@@ -10,6 +10,8 @@ class ToppagesController < ApplicationController
         @account = valid_account?(@weightodon.access_token)
       end
 
+      @latest_weight = @weights.first.value
+
       if params[:duration] == "all"
         @graph_weights = current_user.weights.pluck(:value)
         @graph_date = current_user.weights.pluck(:date).map{|date| date.strftime("%m/%d")}
@@ -40,7 +42,9 @@ class ToppagesController < ApplicationController
     if mastodon_connected?(@user)
       @weightodon = @user.weightodon
       @account = valid_account?(@weightodon.access_token)
-   end
+    end
+
+    @latest_weight = @weights.first.value
 
     if params[:duration] == "all"
       @graph_weights = @user.weights.pluck(:value)

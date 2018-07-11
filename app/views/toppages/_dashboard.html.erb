@@ -1,6 +1,15 @@
+
 <div class="row">
+  <% if user_signed_in? %>
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red" href="/weights/new">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+  </div>
+  <% end %>
   <aside class="col s4">
     <%= render :template => 'profiles/show' %>
+
     <% if user_signed_in? %>
       <%= render :template => 'weightodons/show' %>
     <% else %>
@@ -11,9 +20,6 @@
   </aside>
   <div class="col s8">
     <br/>
-    <% if user_signed_in? %>
-      <%= link_to '体重投稿', new_weight_path ,class: 'waves-effect waves-light btn-large orange'%>
-    <% end %>
     <ul class="tabs">
       <% if user_signed_in? %>
         <li class="tab col s3"><%= link_to '7days', root_path(duration: "week") %></li>
@@ -27,8 +33,8 @@
         <li class="tab col s3"><%= link_to 'All', toppages_path(id: @profile.user_id, duration: "all") %></li>
       <% end %>
     </ul>
-
     <%= render 'graph' %>
+
     <table class="striped">
       <thead>
       <tr>
