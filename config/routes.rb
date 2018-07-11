@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   post '/remotes', :to => 'remotes#create'
 
   resources :profiles, only: [:show, :new, :create, :edit, :update, :destroy]
-  resources :weightodons, only: [:show, :new, :create, :destroy]
+  resources :weightodons, only: [:show, :new, :create, :update, :destroy]
 end

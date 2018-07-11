@@ -12,4 +12,10 @@
   </script>
 
   <div id="myTimeline" class="mastodon-timeline mastodon-timeline-light"></div>
+
+  <%= form_for(@weightodon) do |f| %>
+    <%= f.text_field :client_secret %>
+    <%= f.submit 'Toot', class: 'waves-effect waves-light btn-small light-blue right' %>
+  <% end %>
+
 <% end %>

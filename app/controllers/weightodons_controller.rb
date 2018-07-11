@@ -25,6 +25,12 @@ class WeightodonsController < ApplicationController
     redirect_to root_url
   end
 
+  def update
+    toot(current_user, params.require(:weightodon).permit(:client_secret)[:client_secret])
+    flash[:notice] = 'マストドンにTootしました。'
+    redirect_to root_url
+  end
+
   def destroy
     current_user.weightodon.destroy
     flash[:notice] = 'マストドンとの連携を解除しました。'
