@@ -11,40 +11,29 @@
         </div>
       <% end %>
 
-        <%= f.label :nicname, 'ニックネーム' %>
-        <%= f.text_field :nicname  %>
+      <%= f.label :nicname, 'ニックネーム' %>
+      <%= f.text_field :nicname  %>
 
-      <div class="input-field">
-        <select>
-          <option><%= f.radio_button :public, "公開" %> 公開</option>
-          <option><%= f.radio_button :public, "非公開" %> 非公開</option>
-          <option value="" disabled selected>Choose your option</option>
-        </select>
-        <%= f.label :public, '公開設定' %>
-      </div>
+      <%= f.label :public, '公開設定' %>
+      <%= f.select :public, [%w(公開 公開), %w(非公開 非公開)] %>
 
-
-        <%= f.label :height, '身長' %>
-        <%= f.text_field :height %>
+      <%= f.label :height, '身長' %>
+      <%= f.text_field :height %>
 
       <%= f.label :start_weight, '開始時の体重' %>
-        <%= f.text_field :start_weight %>
+      <%= f.text_field :start_weight %>
 
-      <label>性別</label>
-      <select class="browser-default">
-        <option value="" disabled selected>選択してください</option>
-        <option value="男"><%= f.radio_button :public, "男" %> 男</option>
-        <option value="女"><%= f.radio_button :public, "女" %> </option>
-      </select>
+      <%= f.label :sex, '性別' %>
+      <%= f.select :sex, [["男", "男"], ["女", "女"]] %>
 
       <%= f.label :age, '年齢' %>
-        <%= f.text_field :age %>
+      <%= f.text_field :age %>
 
-        <%= f.label :message, '一言メッセージ' %>
-        <%= f.text_field :message %>
+      <%= f.label :message, '一言メッセージ' %>
+      <%= f.text_field :message %>
 
-      <%= f.submit '投稿', class: 'btn btn-primary' %>
-      <%= link_to 'キャンセル', root_path, class: 'btn btn-default' %>
+      <%= f.submit '投稿', class: 'waves-effect waves-light btn orange' %>
+      <%= link_to 'キャンセル', root_path, class: 'waves-effect waves-light btn grey' %>
     <% end %>
   </div>
 </div>

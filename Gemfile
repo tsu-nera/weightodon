@@ -76,7 +76,6 @@ gem 'tokens'
 
 gem 'unicorn'
 
-gem 'simple_form'
 gem 'materialize-sass'
 
 gem 'bootsnap', require: false

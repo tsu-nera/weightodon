@@ -42,7 +42,7 @@
   </div>
   <div class="card-action">
     <% if user_signed_in? %>
-      <%= link_to 'プロフィール編集', edit_profile_path(@profile) %>
+      <%= link_to 'プロフィール編集', edit_profile_path(@profile), data: {turbolinks: false} %>
       <% if mastodon_connected? %>
         <%= link_to 'マストドン連携解除', current_user.weightodon,
                     method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
