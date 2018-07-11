@@ -20,6 +20,26 @@
   </aside>
   <div class="col s8">
     <br/>
+
+    <% if user_signed_in? %>
+      <a class='dropdown-trigger right black-text' href='#' data-target='dropdown1'><i class="material-icons">more_vert</i></a>
+
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><%= link_to 'プロフィール編集', edit_profile_path(@profile), data: {turbolinks: false},class: 'right'%></li>
+
+        <% if mastodon_connected? %>
+          <li><%= link_to 'マストドン連携解除', current_user.weightodon,
+                          method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
+        <% else %>
+          <li><%= link_to 'マストドン連携', new_weightodon_path %></li>
+        <% end %>
+        <li><%= link_to 'トークン発行', current_user.profile ,
+                        method: :delete, data: { confirm: '既存のトークンは破棄され、新しいトークンを生成します。' } %></li>
+      </ul>
+
+    <% end %>
+
+
     <ul class="tabs">
       <% if user_signed_in? %>
         <li class="tab col s3"><%= link_to '7days', root_path(duration: "week") %></li>

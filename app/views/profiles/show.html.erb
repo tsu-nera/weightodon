@@ -5,28 +5,7 @@
     <img class="media-object img-rounded img-responsive" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
   </div>
 
-  <h3 class="card-panel center"><%= @latest_weight %> kg
-    <!-- Dropdown Trigger -->
-    <% if user_signed_in? %>
-      <a class='dropdown-trigger right black-text' href='#' data-target='dropdown1'><i class="material-icons">more_vert</i></a>
-
-      <!-- Dropdown Structure -->
-      <ul id='dropdown1' class='dropdown-content'>
-        <li><%= link_to 'プロフィール編集', edit_profile_path(@profile), data: {turbolinks: false},class: 'right'%></li>
-
-        <% if mastodon_connected? %>
-          <li><%= link_to 'マストドン連携解除', current_user.weightodon,
-                          method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></li>
-        <% else %>
-          <li><%= link_to 'マストドン連携', new_weightodon_path %></li>
-        <% end %>
-        <li><%= link_to 'トークン発行', current_user.profile ,
-                        method: :delete, data: { confirm: '既存のトークンは破棄され、新しいトークンを生成します。' } %></li>
-      </ul>
-
-    <% end %>
-
-  </h3>
+  <h3 class="card-panel center"><%= @latest_weight %> kg</h3>
 
   <div class="card-content">
 
