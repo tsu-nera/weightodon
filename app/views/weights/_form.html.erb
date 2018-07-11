@@ -1,15 +1,7 @@
 <div class="row">
   <div class="col s4">
   <%= form_for(weight) do |f| %>
-    <% if weight.errors.any? %>
-      <div id="error_explanation">
-        <ul>
-          <% weight.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+      <%= render 'layouts/error_messages', model: f.object %>
 
       <%= f.label :value, '体重' %>
       <%= f.text_field :value, class: 'form-control' ,:autocomplete => :off%>

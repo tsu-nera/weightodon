@@ -26,8 +26,13 @@ class WeightodonsController < ApplicationController
   end
 
   def update
-    toot(current_user, params.require(:weightodon).permit(:client_secret)[:client_secret])
-    flash[:notice] = 'マストドンにTootしました。'
+    message = params.require(:weightodon).permit(:client_secret)[:client_secret]
+    unless message
+      toot(current_user, message)
+      flash[:notice] = 'マストドンにTootしました。'
+    else
+      flash[:alert] = 'マストドンへのTootが失敗しました。'
+    end
     redirect_to root_url
   end
 

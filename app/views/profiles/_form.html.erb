@@ -1,15 +1,7 @@
 <div class="row">
   <div class="col s4">
     <%= form_for(@profile) do |f| %>
-      <% if @profile.errors.any? %>
-        <div id="error_explanation">
-          <ul>
-            <% @profile.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <%= render 'layouts/error_messages', model: f.object %>
 
       <%= f.label :nicname, 'ニックネーム' %>
       <%= f.text_field :nicname  %>

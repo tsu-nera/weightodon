@@ -13,9 +13,16 @@
 
   <div id="myTimeline" class="mastodon-timeline mastodon-timeline-light"></div>
 
+  <div class="input-field" >
   <%= form_for(@weightodon) do |f| %>
-    <%= f.text_field :client_secret, :autocomplete => :off%>
-    <%= f.submit 'Toot', class: 'waves-effect waves-light btn-small light-blue right' %>
+      <%= render 'layouts/error_messages', model: f.object %>
+
+      <label>やせたい気持ちを入力</label>
+    　 <%= f.text_field :client_secret, :autocomplete => :off %>
+      <%= button_tag :type => "submit", class: "waves-effect waves-light btn-small right orange" do %>
+        <i class="material-icons">send</i>
+      <% end %>
   <% end %>
+  </div>
 
 <% end %>
