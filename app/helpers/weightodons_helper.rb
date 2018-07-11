@@ -8,7 +8,8 @@ module WeightodonsHelper
   end
 
   def send_weightodon(user, weight)
-    toot(user, "絶対痩せるぞ！！　絶対運動するぞ！！　絶対ダイエットするぞ！！　今の体重は %.1f kg！！ #web" % [weight])
+    share_url = "https://weightodon.herokuapp.com/toppages?id=%d" % [user.id]
+    toot(user, "絶対痩せるぞ！！　絶対運動するぞ！！　絶対ダイエットするぞ！！　今の体重は %.1f kg！！ #web %s" % [weight, share_url])
   end
 
   def mastodon_connected?(user = current_user)
