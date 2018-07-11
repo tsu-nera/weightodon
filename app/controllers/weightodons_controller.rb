@@ -27,7 +27,7 @@ class WeightodonsController < ApplicationController
 
   def update
     message = params.require(:weightodon).permit(:client_secret)[:client_secret]
-    unless message
+    if message.size > 0
       toot(current_user, message)
       flash[:notice] = 'マストドンにTootしました。'
     else
