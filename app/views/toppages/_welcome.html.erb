@@ -11,8 +11,8 @@
         <h5 class="header col s12 light white-text right-align">A smart weight recording site connected with Mastodon</h5>
       </div>
       <div class="row right-align">
-        <%= link_to 'サインアップ', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange'%>
-        <%= link_to 'マストドンへ', "https://weightodon.site", id: "download-button", class: 'btn-large waves-effect waves-light orange', target: '_blank' %>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'btn-large waves-effect waves-light orange'%>
+        <%= link_to 'Login', new_user_session_path, class: 'btn-large waves-effect waves-light orange'%>
       </div>
     </div>
   </div>
@@ -77,13 +77,16 @@
     <div class="container">
       <div class="row">
         <div class="col m8 offset-m2 s12">
-          <h4 class="center header light">頑張っている仲間たち</h4>
-
+          <h3 class="center header light white-text">仲間をつくり励ましあう</h3>
+          <div class="center">
+          <%= link_to 'Go to Mastodon', "https://weightodon.site",
+                      class: 'btn-large waves-effect waves-light orange', target: '_blank' %>
+          </div>
           <table class="striped">
             <thead>
             <tr>
-              <th>ニックネーム</th>
-              <th>一言メッセージ</th>
+              <th class="white-text">ニックネーム</th>
+              <th class="white-text">一言メッセージ</th>
             </tr>
             </thead>
             <tbody>
