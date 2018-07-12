@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>WeightoDon - スマートな体重記録サイト</title>
+  <title>スマートな体重記録Webサイト | WeightoDon</title>
   <%= csrf_meta_tags %>
 
   <!-- css --->
@@ -13,6 +13,7 @@
   <%= stylesheet_link_tag  'materialize/materialize', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag  'materialize/style', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag  'mastodon.widget', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag  'sns_button_simple', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   <!--  Scripts-->
@@ -44,5 +45,6 @@
 <%= render 'layouts/footer' %>
 
 <%= javascript_include_tag 'materialize/custom', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'sns_button', 'data-turbolinks-track': 'reload' %>
 </body>
 </html>
