@@ -1,139 +1,123 @@
-<a href="https://github.com/tsu-nera/weightodon"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+<!--<a href="https://github.com/tsu-nera/weightodon"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>-->
 
-<div class="section no-pad-bot" id="index-banner">
-  <div class="container">
-    <br><br>
-    <h1 class="header center orange-text">WeightoDon</h1>
-    <div class="row center">
-      <h5 class="header col s12 light">スマートな体重記録サイト</h5>
-      <h5 class="header col s12 light">A smart weight recording site connected with Mastodon</h5>
-    </div>
-    <div class="row center">
-      <%= link_to 'サインアップ', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange'%>
-      <%= link_to 'マストドンへ', "https://weightodon.site", id: "download-button", class: 'btn-large waves-effect waves-light orange', target: '_blank' %>
-    </div>
-  </div>
-</div>
+<div id="fullpage">
 
-<br/>
-
-<hr width="800px">
-
-<br/>
-
-<div class="container">
-  <h4 class="center header light">多彩な連携機能</h4>
-
-  <div class="section">
-    <!--   Icon Section   -->
-    <div class="row">
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-          <h5 class="center">Mastodon</h5>
-
-          <p class="light">Twitterのクローンであるマストドンと連携できます。ソーシャルメディアに自分の体重を晒すのに抵抗がある人は安心してください。完全匿名性のコミュニティをあなたのために用意しています。</p>
-        </div>
+  <div class="section part1">
+    <div class="container">
+    <div class="no-pad-bot" id="index-banner">
+      <h1 class="header right-align orange-text">WeightoDon</h1>
+      <div class="row center">
+        <h5 class="header col s12 light white-text right-align">スマートな体重記録サイト</h5>
+        <h5 class="header col s12 light white-text right-align">A smart weight recording site connected with Mastodon</h5>
       </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-          <h5 class="center">Smart Scales</h5>
-
-          <p class="light">スマート体重計からの体重自動入力をサポートします。体重記録でもっとも煩わしい作業は、体重をスマホから入力することでした。WeightoDonとスマート体重計を連携させることで、その入力作業は自動化できます。</p>
-        </div>
-      </div>
-
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="material-icons">chat</i></h2>
-          <h5 class="center">Smart Speakers</h5>
-
-          <p class="light">スマートスピーカーからの音声入力をサポートします。お風呂あがりやワークアウトのあとなど、スマホを直接操作できないときも大丈夫。スマートスピーカーに話しかけるだけで体重記録ができます。</p>
-        </div>
+      <div class="row right-align">
+        <%= link_to 'サインアップ', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange'%>
+        <%= link_to 'マストドンへ', "https://weightodon.site", id: "download-button", class: 'btn-large waves-effect waves-light orange', target: '_blank' %>
       </div>
     </div>
   </div>
-  <div class="center">
-    <%= link_to 'もっと詳しく', "https://github.com/tsu-nera/weightodon/wiki", id: "download-button", class: 'btn-large waves-effect waves-light orange', target: '_blank' %>
   </div>
-</div>
 
-<br/>
+  <div class="section part2">
+    <div class="container">
+    <h4 class="center light">多彩な連携機能</h4>
 
-<hr width="800px">
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Mastodon</h5>
 
-<br/>
+            <p class="light">Twitterのクローンであるマストドンと連携できます。ソーシャルメディアに自分の体重を晒すのに抵抗がある人は安心してください。完全匿名性のコミュニティをあなたのために用意しています。</p>
+          </div>
+        </div>
 
-<div class="container">
-  <h4 class="center header light">特徴</h4>
-  <div class="row">
-    <div class="col m8 offset-m2 s12">
-      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>全て無料のオープンソース</h5>
-      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>完全に匿名なマストドンコミュニティ</h5>
-      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>直感的にわかりやすいUIと体重投稿機能</h5>
-      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>見やすいダッシュボードと体重グラフ表示</h5>
-      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>マストドンと連携した体重投稿をサポート</h5>
-      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマート体重計からの自動入力をサポート</h5>
-      <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマートスピーカーからの音声入力をサポート</h5>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Smart Scales</h5>
+
+            <p class="light">スマート体重計からの体重自動入力をサポートします。体重記録でもっとも煩わしい作業は、体重をスマホから入力することでした。WeightoDonとスマート体重計を連携させることで、その入力作業は自動化できます。</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">chat</i></h2>
+            <h5 class="center">Smart Speakers</h5>
+
+            <p class="light">スマートスピーカーからの音声入力をサポートします。お風呂あがりやワークアウトのあとなど、スマホを直接操作できないときも大丈夫。スマートスピーカーに話しかけるだけで体重記録ができます。</p>
+          </div>
+      </div>
+    </div>
+    <div class="center">
+      <%= link_to 'もっと詳しく', "https://github.com/tsu-nera/weightodon/wiki", id: "download-button", class: 'btn-large waves-effect waves-light orange', target: '_blank' %>
     </div>
   </div>
-</div>
+  </div>
 
-<br/>
-
-<hr width="800px">
-
-<br/>
-
-<div class="container">
-  <div class="row">
-    <div class="col m8 offset-m2 s12">
-      <h4 class="center header light">頑張っている仲間たち</h4>
-
-    <table class="striped">
-      <thead>
-      <tr>
-        <th>ニックネーム</th>
-        <th>一言メッセージ</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @profiles.each do |profile| %>
-        <tr>
-          <td><%= link_to profile.nicname, toppages_path(id: profile.user_id) %></td>
-          <td><%= profile.message %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+  <div class="section part3">
+    <div class="container">
+      <h4 class="center header light">特徴</h4>
+      <div class="row">
+        <div class="col m8 offset-m2 s12">
+          <h5 class="light"><i class="material-icons light-blue-text">check_box</i>全て無料のオープンソース</h5>
+          <h5 class="light"><i class="material-icons light-blue-text">check_box</i>完全に匿名なマストドンコミュニティ</h5>
+          <h5 class="light"><i class="material-icons light-blue-text">check_box</i>直感的にわかりやすいUIと体重投稿機能</h5>
+          <h5 class="light"><i class="material-icons light-blue-text">check_box</i>見やすいダッシュボードと体重グラフ表示</h5>
+          <h5 class="light"><i class="material-icons light-blue-text">check_box</i>マストドンと連携した体重投稿をサポート</h5>
+          <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマート体重計からの自動入力をサポート</h5>
+          <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマートスピーカーからの音声入力をサポート</h5>
+        </div>
+      </div>
   </div>
   </div>
-</div>
 
-<br/>
+  <div class="section part4">
+    <div class="container">
+      <div class="row">
+        <div class="col m8 offset-m2 s12">
+          <h4 class="center header light">頑張っている仲間たち</h4>
 
-<hr width="800px">
-<div class="container">
-  <br/><br/>
-<h4 class="center header light">さあ、あなたもはじめよう</h4>
-<br/>
-<div class="center">
-  <%= link_to 'Join Now!', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
-</div>
+          <table class="striped">
+            <thead>
+            <tr>
+              <th>ニックネーム</th>
+              <th>一言メッセージ</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @profiles.each do |profile| %>
+              <tr>
+                <td><%= link_to profile.nicname, toppages_path(id: profile.user_id) %></td>
+                <td><%= profile.message %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <br/><br/>
-</div>
+  <div class="section part5">
+    <div class="container">
+      <h4 class="center header light">さあ、はじめよう</h4>
+      <br/>
+      <div class="center">
+        <%= link_to 'Join Now!', new_user_registration_path, id: "download-button", class: 'btn-large waves-effect waves-light orange' %>
+      </div>
+    </div>
+  </div>
+<!--    <hr width="800px">-->
 
-<hr width="800px">
-
-<div class="container ">
-  <ul class="sns_button">
-    <li class="sns_button_twitter"></li>
-    <li class="sns_button_facebook"></li>
-    <li class="sns_button_hatena"></li>
-    <li class="sns_button_google"></li>
-    <li class="sns_button_line"></li>
-  </ul>
+<!--    <div class="container ">-->
+<!--      <ul class="sns_button">-->
+<!--        <li class="sns_button_twitter"></li>-->
+<!--        <li class="sns_button_facebook"></li>-->
+<!--        <li class="sns_button_hatena"></li>-->
+<!--        <li class="sns_button_google"></li>-->
+<!--        <li class="sns_button_line"></li>-->
+<!--      </ul>-->
+<!--    </div>-->
 </div>
