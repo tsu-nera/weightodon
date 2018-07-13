@@ -14,8 +14,8 @@
   <%= stylesheet_link_tag  'materialize/style', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag  'mastodon.widget', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag  'sns_button_simple', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%#= stylesheet_link_tag  'fullpage', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_link_tag  'jquery.fullPage', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag  'fullpage', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%#= stylesheet_link_tag  'jquery.fullPage', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   <!--  Scripts-->
@@ -26,9 +26,7 @@
   <%= javascript_include_tag 'materialize/materialize', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'materialize/init', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'materialize/custom', 'data-turbolinks-track': 'reload' %>
-  <%#= javascript_include_tag 'fullpage', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'fullpage-options', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'jquery.fullPage', 'data-turbolinks-track': 'reload' %>
+  <%#= javascript_include_tag 'jquery.fullPage', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-suppress-warning': 'reload' %>
 
   <%= analytics_init if Rails.env.production? %>
@@ -39,7 +37,7 @@
 <%= render 'layouts/navbar' %>
 
 <main>
-  <% if not @welcome.nil? %>
+  <% unless @welcome.nil? %>
   <%= render 'layouts/flash_messages' %>
   <%= yield %>
 <% else %>
@@ -52,7 +50,8 @@
 
 <%= render 'layouts/footer' %>
 
-
+<%= javascript_include_tag 'fullpage', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'fullpage-options', 'data-turbolinks-track': 'reload' %>
 
 </body>
 </html>
