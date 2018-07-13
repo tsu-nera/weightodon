@@ -92,7 +92,7 @@
             <tbody>
             <% @profiles.each do |profile| %>
               <tr>
-                <td><%= link_to profile.nicname, toppages_path(id: profile.user_id) %></td>
+                <td><%= link_to profile.nicname, toppages_path(id: profile.user_id), data: {"turbolinks" => false} %></td>
                 <td><%= profile.message %></td>
               </tr>
             <% end %>
