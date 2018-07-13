@@ -79,3 +79,6 @@ gem 'unicorn'
 gem 'materialize-sass'
 
 gem 'bootsnap', require: false
+
+gem 'meta-tags', :require => 'meta_tags'
+gem 'sitemap_generator'
