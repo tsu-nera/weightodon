@@ -13,6 +13,10 @@ main {
   flex: 1 0 auto;
 }
 
+#fp-nav ul li a span {
+  background: #fff !important;
+}
+
 .part1 {
   background-image: image-url("christopher-campbell-40367-unsplash.jpg");
   background-size: cover;
