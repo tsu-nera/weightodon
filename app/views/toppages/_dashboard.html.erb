@@ -36,9 +36,7 @@
         <li><%= link_to 'トークン発行', current_user.profile ,
                         method: :delete, data: { confirm: '既存のトークンは破棄され、新しいトークンを生成します。' } %></li>
       </ul>
-
     <% end %>
-
 
     <ul class="tabs">
       <% if user_signed_in? %>
@@ -53,6 +51,7 @@
         <li class="tab col s3"><%= link_to 'All', toppages_path(id: @profile.user_id, duration: "all") %></li>
       <% end %>
     </ul>
+
     <%= render 'graph' %>
 
     <table class="striped">
