@@ -25,7 +25,6 @@
   <%= javascript_include_tag 'mastodon.widget-jp', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'materialize/materialize', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'materialize/init', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'materialize/custom', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-suppress-warning': 'reload' %>
 
   <%= analytics_init if Rails.env.production? %>
@@ -49,6 +48,7 @@
 
 <%= render 'layouts/footer' %>
 
+<%= javascript_include_tag 'materialize/custom', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'fullpage', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'fullpage-options', 'data-turbolinks-track': 'reload' %>
 
