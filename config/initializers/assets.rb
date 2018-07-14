@@ -17,4 +17,4 @@ Rails.application.config.assets.precompile += %w( materialize/materialize.css ma
 Rails.application.config.assets.precompile += %w( materialize/materialize.js materialize/init.js materialize/custom.js )
 Rails.application.config.assets.precompile += %w( sns_button.js sns_button_simple.css )
 Rails.application.config.assets.precompile += %w( fullpage.js fullpage-options.js fullpage.css )
-Rails.application.config.assets.precompile += %w( jquery.fullPage.js jquery.fullPage.css )
+Rails.application.config.assets.precompile += %w( flowtype.js )

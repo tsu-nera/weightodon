@@ -30,7 +30,7 @@ class ToppagesController < ApplicationController
       @graph_date.reverse!
     else
       @welcome = true
-      @profiles = Profile.where(public: "公開").order("updated_at DESC").limit(8)
+      @profiles = Profile.where(public: "公開").order("updated_at DESC").limit(3)
     end
   end
 
