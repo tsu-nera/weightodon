@@ -82,3 +82,5 @@ gem 'bootsnap', require: false
 
 gem 'meta-tags', :require => 'meta_tags'
 gem 'sitemap_generator'
+
+gem 'browser'

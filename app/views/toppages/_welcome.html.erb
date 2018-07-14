@@ -61,13 +61,23 @@
       <h4 class="center header light">特徴</h4>
       <div class="row">
         <div class="col m8 offset-m2 s12">
-          <h6 class="light"><i class="material-icons light-blue-text">check_box</i>全て無料のオープンソース</h6>
-          <h6 class="light"><i class="material-icons light-blue-text">check_box</i>完全に匿名なマストドンコミュニティ</h6>
-          <h6 class="light"><i class="material-icons light-blue-text">check_box</i>直感的にわかりやすいUIと体重投稿機能</h6>
-          <h6 class="light"><i class="material-icons light-blue-text">check_box</i>見やすいダッシュボードと体重グラフ表示</h6>
-          <h6 class="light"><i class="material-icons light-blue-text">check_box</i>マストドンと連携した体重投稿をサポート</h6>
-          <h6 class="light"><i class="material-icons light-blue-text">check_box</i>スマート体重計からの自動入力をサポート</h6>
-          <h6 class="light"><i class="material-icons light-blue-text">check_box</i>スマートスピーカーからの音声入力をサポート</h6>
+          <% if browser.device.mobile? %>
+            <h6 class="light"><i class="material-icons light-blue-text">check_box</i>全て無料のオープンソース</h6>
+            <h6 class="light"><i class="material-icons light-blue-text">check_box</i>完全に匿名なマストドンコミュニティ</h6>
+            <h6 class="light"><i class="material-icons light-blue-text">check_box</i>直感的にわかりやすいUIと体重投稿機能</h6>
+            <h6 class="light"><i class="material-icons light-blue-text">check_box</i>見やすいダッシュボードと体重グラフ表示</h6>
+            <h6 class="light"><i class="material-icons light-blue-text">check_box</i>マストドンと連携した体重投稿をサポート</h6>
+            <h6 class="light"><i class="material-icons light-blue-text">check_box</i>スマート体重計からの自動入力をサポート</h6>
+            <h6 class="light"><i class="material-icons light-blue-text">check_box</i>スマートスピーカーからの音声入力をサポート</h6>
+            <% else %>
+            <h5 class="light"><i class="material-icons light-blue-text">check_box</i>全て無料のオープンソース</h5>
+            <h5 class="light"><i class="material-icons light-blue-text">check_box</i>完全に匿名なマストドンコミュニティ</h5>
+            <h5 class="light"><i class="material-icons light-blue-text">check_box</i>直感的にわかりやすいUIと体重投稿機能</h5>
+            <h5 class="light"><i class="material-icons light-blue-text">check_box</i>見やすいダッシュボードと体重グラフ表示</h5>
+            <h5 class="light"><i class="material-icons light-blue-text">check_box</i>マストドンと連携した体重投稿をサポート</h5>
+            <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマート体重計からの自動入力をサポート</h5>
+            <h5 class="light"><i class="material-icons light-blue-text">check_box</i>スマートスピーカーからの音声入力をサポート</h5>
+            <% end %>
         </div>
       </div>
   </div>

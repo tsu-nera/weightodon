@@ -9,6 +9,10 @@ body {
   flex-direction: column;
 }
 
+main {
+  flex: 1 0 auto;
+}
+
 #fp-nav ul li a span {
   background: #fff !important;
 }
