@@ -11,7 +11,7 @@ class ToppagesController < ApplicationController
       end
 
       if @weights.first
-        @latest_weight = @latest_weight.value
+        @latest_weight = @weights.first.value
       else
         @latest_weight = @profile.start_weight
       end
@@ -49,7 +49,7 @@ class ToppagesController < ApplicationController
     end
 
     if @weights.first
-      @latest_weight = @latest_weight.value
+      @latest_weight = @weights.first.value
     else
       @latest_weight = @profile.start_weight
     end
