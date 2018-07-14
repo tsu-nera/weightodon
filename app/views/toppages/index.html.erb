@@ -1,5 +1,9 @@
 <% if user_signed_in? %>
-  <%= render 'dashboard'%>
+  <% if browser.device.mobile? %>
+    <%= render 'dashboard_mobole'%>
+  <% else %>
+    <%= render 'dashboard'%>
+  <% end %>
 <% else %>
   <%= render 'welcome' %>
 <% end %>

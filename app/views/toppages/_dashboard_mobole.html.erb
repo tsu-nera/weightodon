@@ -1,0 +1,91 @@
+<div class="row">
+  <% if user_signed_in? %>
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large red" href="/weights/new">
+        <i class="large material-icons">mode_edit</i>
+      </a>
+    </div>
+  <% end %>
+
+  <div class="col s12">
+
+  <%= render :template => 'profiles/show' %>
+
+  <% if user_signed_in? %>
+    <%= render :template => 'weightodons/show' %>
+  <% else %>
+    <% if @account %>
+      マストドンもフォローしてね！ <a href="<%= @account.url %>" target="_blank">@<%= @account.username %></a>
+    <% end %>
+  <% end%>
+
+  </div>
+  <div class="col s12">
+
+  <br/>
+
+  <% if user_signed_in? %>
+    <a class='dropdown-trigger right black-text' href='#' data-target='dropdown1'><i class="material-icons">menu</i></a>
+
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><%= link_to 'プロフィール編集', edit_profile_path(@profile), data: {turbolinks: false},class: 'right'%></li>
+
+      <% if mastodon_connected? %>
+        <li><%= link_to 'マストドン連携解除', current_user.weightodon,
+                        method: :delete, data: { confirm: '本当に解除してよろしいですか？' } %></li>
+      <% else %>
+        <li><%= link_to 'マストドン連携', new_weightodon_path %></li>
+      <% end %>
+      <li><%= link_to 'トークン発行', current_user.profile ,
+                      method: :delete, data: { confirm: '既存のトークンは破棄され、新しいトークンを生成します。' } %></li>
+    </ul>
+  <% end %>
+
+  <ul class="tabs">
+    <% if user_signed_in? %>
+      <li class="tab col s3"><%= link_to '7days', root_path(duration: "week") %></li>
+      <li class="tab col s3"><%= link_to '30days', root_path(duration: "month") %></li>
+      <li class="tab col s3"><%= link_to '90days', root_path(duration: "3month") %></li>
+      <li class="tab col s3"><%= link_to 'All', root_path(duration: "all") %></li>
+    <% else %>
+      <li class="tab col s3"><%= link_to '7days', toppages_path(id: @profile.user_id, duration: "week") %></li>
+      <li class="tab col s3"><%= link_to '30days', toppages_path(id: @profile.user_id, duration: "month") %></li>
+      <li class="tab col s3"><%= link_to '90days', toppages_path(id: @profile.user_id, duration: "3month") %></li>
+      <li class="tab col s3"><%= link_to 'All', toppages_path(id: @profile.user_id, duration: "all") %></li>
+    <% end %>
+  </ul>
+
+  <%= render 'graph' %>
+
+  <table class="striped">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Weight</th>
+      <% if user_signed_in? %>
+        <th>Action</th>
+      <% end %>
+    </tr>
+    </thead>
+    <tbody>
+    <% @weights.each do |weight| %>
+      <tr>
+        <td><%= weight.date.strftime('%Y-%m-%d %H:%M') %></td>
+        <td><%= weight.value %> kg</td>
+        <% if user_signed_in? %>
+          <td>
+            <i class="tiny material-icons">edit</i>
+            <%= link_to '編集', edit_weight_path(weight) %>
+            <i class="tiny material-icons">delete</i>
+            <%= link_to '削除', weight, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= paginate @weights %>
+
+  <%= render 'google_adsense' %>
+  </div>
+</div>
