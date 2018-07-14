@@ -10,7 +10,11 @@ class ToppagesController < ApplicationController
         @account = valid_account?(@weightodon.access_token)
       end
 
-      @latest_weight = @weights.first.value
+      if @weights.first
+        @latest_weight = @latest_weight.value
+      else
+        @latest_weight = @profile.start_weight
+      end
 
       if params[:duration] == "all"
         @graph_weights = current_user.weights.pluck(:value)
@@ -44,7 +48,11 @@ class ToppagesController < ApplicationController
       @account = valid_account?(@weightodon.access_token)
     end
 
-    @latest_weight = @weights.first.value
+    if @weights.first
+      @latest_weight = @latest_weight.value
+    else
+      @latest_weight = @profile.start_weight
+    end
 
     if params[:duration] == "all"
       @graph_weights = @user.weights.pluck(:value)
