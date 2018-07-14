@@ -7,7 +7,14 @@
     </a>
   </div>
   <% end %>
-  <aside class="col s4">
+
+  <% if browser.device.mobile? %>
+    <div class="col s12">
+  <% else %>
+    <div class="col s4">
+  <% end %>
+
+
     <%= render :template => 'profiles/show' %>
 
     <% if user_signed_in? %>
@@ -17,8 +24,14 @@
         マストドンもフォローしてね！ <a href="<%= @account.url %>" target="_blank">@<%= @account.username %></a>
       <% end %>
     <% end%>
-  </aside>
-  <div class="col s8">
+
+  <% if browser.device.mobile? %>
+    </div>
+    <div class="col s12">
+  <% else %>
+    </aside>
+    <div class="col s8">
+<% end %>
     <br/>
 
     <% if user_signed_in? %>
