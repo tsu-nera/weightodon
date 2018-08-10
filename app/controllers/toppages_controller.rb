@@ -10,7 +10,7 @@ class ToppagesController < ApplicationController
         @account = valid_account?(@weightodon.access_token)
       end
 
-      if @weights.first
+      if @weight and @weights.first
         @latest_weight = @weights.first.value
       else
         @latest_weight = @profile.start_weight
