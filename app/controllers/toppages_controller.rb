@@ -13,7 +13,7 @@ class ToppagesController < ApplicationController
       if @weights and @weights.first
         @latest_weight = @weights.first.value
       else
-        @latest_weight = @profile.start_weight
+        @latest_weight = 0
       end
 
       if params[:duration] == "all"
@@ -51,7 +51,7 @@ class ToppagesController < ApplicationController
     if @weights and @weights.first
       @latest_weight = @weights.first.value
     else
-      @latest_weight = @profile.start_weight
+      @latest_weight = 0
     end
 
     if params[:duration] == "all"
