@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col s4">
+    <%= form_for(@profile) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+
+      <%= f.label :nicname, 'ニックネーム' %>
+      <%= f.text_field :nicname  %>
+
+      <%= f.label :public, '公開設定' %>
+      <%= f.select :public, [%w(公開 公開), %w(非公開 非公開)] %>
+
+      <%= f.label :height, '身長' %>
+      <%= f.text_field :height %>
+
+      <%= f.label :start_weight, '開始時の体重' %>
+      <%= f.text_field :start_weight %>
+
+      <%= f.label :sex, '性別' %>
+      <%= f.select :sex, [["男", "男"], ["女", "女"]] %>
+
+      <%= f.label :age, '年齢' %>
+      <%= f.text_field :age %>
+
+      <%= f.label :message, '一言メッセージ' %>
+      <%= f.text_field :message %>
+
+      <%= f.submit '投稿', class: 'waves-effect waves-light btn orange' %>
+    <% end %>
+  </div>
+</div>
